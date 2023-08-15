@@ -1,5 +1,10 @@
 PeerDB Cloud Template
 
+## Prerequisites
+
+- [NodeJS](https://nodejs.org/en): `18.17.1`
+- [yarn](https://yarnpkg.com/) package manager: `3.6.1`
+
 ## Getting Started
 
 Install dependencies using [yarn](https://classic.yarnpkg.com/en/)
