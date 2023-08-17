@@ -5,12 +5,15 @@ export default {
   title: 'Components / Button',
   component: Button,
   tags: ['autodocs'],
+  args: {
+    children: 'Action',
+  },
 } satisfies Meta<typeof Button>;
 
 type Story = StoryObj<typeof Button>;
-export const Test: Story = {
+export const Normal: Story = {
   args: {
-    children: 'Test button',
+    variant: 'normal',
   },
   render: (props) => <Button {...props} />,
 };
