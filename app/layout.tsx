@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Menu } from '../components/Menu';
+import { AppTheme, StyledComponentsRegistry } from '../lib/AppTheme';
 
 export const metadata: Metadata = {
   title: 'Peerdb Cloud Template',
@@ -13,10 +14,14 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body>
-        <header>
-          <Menu />
-        </header>
-        {children}
+        <StyledComponentsRegistry>
+          <AppTheme>
+            <header>
+              <Menu />
+            </header>
+            {children}
+          </AppTheme>
+        </StyledComponentsRegistry>
       </body>
     </html>
   );
