@@ -11,7 +11,7 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-export function AppTheme({ children }: PropsWithChildren) {
+export function AppThemeProvider({ children }: PropsWithChildren) {
   return (
     <ThemeProvider theme={appTheme}>
       <GlobalStyle />

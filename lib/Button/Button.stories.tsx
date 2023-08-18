@@ -8,6 +8,11 @@ export default {
   args: {
     children: 'Action',
   },
+  argTypes: {
+    onClick: {
+      action: 'Clicked',
+    },
+  },
 } satisfies Meta<typeof Button>;
 
 type Story = StoryObj<typeof Button>;

@@ -1,2 +1,2 @@
-export * from './AppTheme';
+export * from './AppThemeProvider';
 export * from './StyledComponentsRegistry';
