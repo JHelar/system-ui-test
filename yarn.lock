@@ -2111,6 +2111,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@material-design-icons/font@npm:latest":
+  version: 0.14.11
+  resolution: "@material-design-icons/font@npm:0.14.11"
+  checksum: 348bbc9e2ccf570d93f08b5b47a35aaafea22d786c800893d933b87a62f2c6cfe0a92cf3a55e40cfa83e997d44fc3b449fe7043e4cbf6261e0101f17fa74bc96
+  languageName: node
+  linkType: hard
+
 "@mdx-js/react@npm:^2.1.5":
   version: 2.3.0
   resolution: "@mdx-js/react@npm:2.3.0"
@@ -10753,6 +10760,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "peerdb-cloud-template@workspace:."
   dependencies:
+    "@material-design-icons/font": latest
     "@storybook/addon-essentials": ^7.3.0
     "@storybook/addon-interactions": ^7.3.0
     "@storybook/addon-links": ^7.3.0

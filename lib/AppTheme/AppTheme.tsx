@@ -6,7 +6,7 @@ import { appTheme, primitives } from './appTheme';
 
 const GlobalStyle = createGlobalStyle`
   html {
-    font-family: ${primitives.typography.fontFamily};
+    font-family: ${primitives.typography.textFont};
     font-size: 100%;
   }
 `;

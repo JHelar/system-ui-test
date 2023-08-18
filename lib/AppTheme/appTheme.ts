@@ -1,8 +1,9 @@
-import { appThemeFont } from './appThemeFont';
+import { interFont, materialIconsFont } from './appThemeFont';
 
 export const primitives = {
   typography: {
-    fontFamily: appThemeFont.style.fontFamily,
+    textFont: interFont.style.fontFamily,
+    iconFont: materialIconsFont.style.fontFamily,
   },
 };
 
@@ -10,7 +11,7 @@ export const appTheme = {
   text: {
     regular: {
       largeTitle: {
-        fontFamily: primitives.typography.fontFamily,
+        fontFamily: primitives.typography.textFont,
         fontSize: '40px',
         fontStyle: 'normal',
         fontWeight: 400,
@@ -18,7 +19,7 @@ export const appTheme = {
         letterSpacing: '-0.88px',
       },
       title1: {
-        fontFamily: primitives.typography.fontFamily,
+        fontFamily: primitives.typography.textFont,
         fontSize: '30px',
         fontStyle: 'normal',
         fontWeight: 400,
@@ -26,7 +27,7 @@ export const appTheme = {
         letterSpacing: '-0.63px',
       },
       title2: {
-        fontFamily: primitives.typography.fontFamily,
+        fontFamily: primitives.typography.textFont,
         fontSize: '24px',
         fontStyle: 'normal',
         fontWeight: 400,
@@ -34,7 +35,7 @@ export const appTheme = {
         letterSpacing: '-0.456px',
       },
       title3: {
-        fontFamily: primitives.typography.fontFamily,
+        fontFamily: primitives.typography.textFont,
         fontSize: '20px',
         fontStyle: 'normal',
         fontWeight: 400,
@@ -42,7 +43,7 @@ export const appTheme = {
         letterSpacing: '-0.34px',
       },
       headline: {
-        fontFamily: primitives.typography.fontFamily,
+        fontFamily: primitives.typography.textFont,
         fontSize: '18px',
         fontStyle: 'normal',
         fontWeight: 400,
@@ -50,7 +51,7 @@ export const appTheme = {
         letterSpacing: '-0.252px',
       },
       body: {
-        fontFamily: primitives.typography.fontFamily,
+        fontFamily: primitives.typography.textFont,
         fontSize: '16px',
         fontStyle: 'normal',
         fontWeight: 400,
@@ -59,7 +60,7 @@ export const appTheme = {
       },
       callout: {
         fontVariantNumeric: 'lining-nums tabular-nums',
-        fontFamily: primitives.typography.fontFamily,
+        fontFamily: primitives.typography.textFont,
         fontSize: '16px',
         fontStyle: 'normal',
         fontWeight: 400,
@@ -68,7 +69,7 @@ export const appTheme = {
       },
       subheadline: {
         fontVariantNumeric: 'lining-nums tabular-nums',
-        fontFamily: primitives.typography.fontFamily,
+        fontFamily: primitives.typography.textFont,
         fontSize: '15px',
         fontStyle: 'normal',
         fontWeight: 400,
@@ -76,7 +77,7 @@ export const appTheme = {
         letterSpacing: '-0.135px',
       },
       footnote: {
-        fontFamily: primitives.typography.fontFamily,
+        fontFamily: primitives.typography.textFont,
         fontSize: '12px',
         fontStyle: 'normal',
         fontWeight: 400,
@@ -84,7 +85,7 @@ export const appTheme = {
         letterSpacing: '0.06px',
       },
       caption1: {
-        fontFamily: primitives.typography.fontFamily,
+        fontFamily: primitives.typography.textFont,
         fontSize: '10px',
         fontStyle: 'normal',
         fontWeight: 400,
@@ -92,7 +93,7 @@ export const appTheme = {
         letterSpacing: '0.1px',
       },
       caption2: {
-        fontFamily: primitives.typography.fontFamily,
+        fontFamily: primitives.typography.textFont,
         fontSize: '9px',
         fontStyle: ' normal',
         fontWeight: 400,
@@ -102,7 +103,7 @@ export const appTheme = {
     },
     medium: {
       largeTitle: {
-        fontFamily: primitives.typography.fontFamily,
+        fontFamily: primitives.typography.textFont,
         fontSize: '40px',
         fontStyle: 'normal',
         fontWeight: 500,
@@ -110,7 +111,7 @@ export const appTheme = {
         letterSpacing: '-0.88px',
       },
       title1: {
-        fontFamily: primitives.typography.fontFamily,
+        fontFamily: primitives.typography.textFont,
         fontSize: '30px',
         fontStyle: 'normal',
         fontWeight: 500,
@@ -118,7 +119,7 @@ export const appTheme = {
         letterSpacing: '-0.63px',
       },
       title2: {
-        fontFamily: primitives.typography.fontFamily,
+        fontFamily: primitives.typography.textFont,
         fontSize: '24px',
         fontStyle: 'normal',
         fontWeight: 500,
@@ -126,7 +127,7 @@ export const appTheme = {
         letterSpacing: '-0.456px',
       },
       title3: {
-        fontFamily: primitives.typography.fontFamily,
+        fontFamily: primitives.typography.textFont,
         fontSize: '20px',
         fontStyle: 'normal',
         fontWeight: 500,
@@ -134,7 +135,7 @@ export const appTheme = {
         letterSpacing: '-0.34px',
       },
       headline: {
-        fontFamily: primitives.typography.fontFamily,
+        fontFamily: primitives.typography.textFont,
         fontSize: '18px',
         fontStyle: 'normal',
         fontWeight: 500,
@@ -142,7 +143,7 @@ export const appTheme = {
         letterSpacing: '-0.252px',
       },
       body: {
-        fontFamily: primitives.typography.fontFamily,
+        fontFamily: primitives.typography.textFont,
         fontSize: '16px',
         fontStyle: 'normal',
         fontWeight: 500,
@@ -151,7 +152,7 @@ export const appTheme = {
       },
       callout: {
         fontVariantNumeric: 'lining-nums tabular-nums',
-        fontFamily: primitives.typography.fontFamily,
+        fontFamily: primitives.typography.textFont,
         fontSize: '16px',
         fontStyle: 'normal',
         fontWeight: 500,
@@ -160,7 +161,7 @@ export const appTheme = {
       },
       subheadline: {
         fontVariantNumeric: 'lining-nums tabular-nums',
-        fontFamily: primitives.typography.fontFamily,
+        fontFamily: primitives.typography.textFont,
         fontSize: '15px',
         fontStyle: 'normal',
         fontWeight: 500,
@@ -168,7 +169,7 @@ export const appTheme = {
         letterSpacing: '-0.135px',
       },
       footnote: {
-        fontFamily: primitives.typography.fontFamily,
+        fontFamily: primitives.typography.textFont,
         fontSize: '12px',
         fontStyle: 'normal',
         fontWeight: 500,
@@ -176,7 +177,7 @@ export const appTheme = {
         letterSpacing: '0.06px',
       },
       caption1: {
-        fontFamily: primitives.typography.fontFamily,
+        fontFamily: primitives.typography.textFont,
         fontSize: '10px',
         fontStyle: 'normal',
         fontWeight: 500,
@@ -184,7 +185,7 @@ export const appTheme = {
         letterSpacing: '0.1px',
       },
       caption2: {
-        fontFamily: primitives.typography.fontFamily,
+        fontFamily: primitives.typography.textFont,
         fontSize: '9px',
         fontStyle: ' normal',
         fontWeight: 500,
@@ -194,7 +195,7 @@ export const appTheme = {
     },
     semiBold: {
       largeTitle: {
-        fontFamily: primitives.typography.fontFamily,
+        fontFamily: primitives.typography.textFont,
         fontSize: '40px',
         fontStyle: 'normal',
         fontWeight: 600,
@@ -202,7 +203,7 @@ export const appTheme = {
         letterSpacing: '-0.88px',
       },
       title1: {
-        fontFamily: primitives.typography.fontFamily,
+        fontFamily: primitives.typography.textFont,
         fontSize: '30px',
         fontStyle: 'normal',
         fontWeight: 600,
@@ -210,7 +211,7 @@ export const appTheme = {
         letterSpacing: '-0.63px',
       },
       title2: {
-        fontFamily: primitives.typography.fontFamily,
+        fontFamily: primitives.typography.textFont,
         fontSize: '24px',
         fontStyle: 'normal',
         fontWeight: 600,
@@ -218,7 +219,7 @@ export const appTheme = {
         letterSpacing: '-0.456px',
       },
       title3: {
-        fontFamily: primitives.typography.fontFamily,
+        fontFamily: primitives.typography.textFont,
         fontSize: '20px',
         fontStyle: 'normal',
         fontWeight: 600,
@@ -226,7 +227,7 @@ export const appTheme = {
         letterSpacing: '-0.34px',
       },
       headline: {
-        fontFamily: primitives.typography.fontFamily,
+        fontFamily: primitives.typography.textFont,
         fontSize: '18px',
         fontStyle: 'normal',
         fontWeight: 600,
@@ -234,7 +235,7 @@ export const appTheme = {
         letterSpacing: '-0.252px',
       },
       body: {
-        fontFamily: primitives.typography.fontFamily,
+        fontFamily: primitives.typography.textFont,
         fontSize: '16px',
         fontStyle: 'normal',
         fontWeight: 600,
@@ -243,7 +244,7 @@ export const appTheme = {
       },
       callout: {
         fontVariantNumeric: 'lining-nums tabular-nums',
-        fontFamily: primitives.typography.fontFamily,
+        fontFamily: primitives.typography.textFont,
         fontSize: '16px',
         fontStyle: 'normal',
         fontWeight: 600,
@@ -252,7 +253,7 @@ export const appTheme = {
       },
       subheadline: {
         fontVariantNumeric: 'lining-nums tabular-nums',
-        fontFamily: primitives.typography.fontFamily,
+        fontFamily: primitives.typography.textFont,
         fontSize: '15px',
         fontStyle: 'normal',
         fontWeight: 600,
@@ -260,7 +261,7 @@ export const appTheme = {
         letterSpacing: '-0.135px',
       },
       footnote: {
-        fontFamily: primitives.typography.fontFamily,
+        fontFamily: primitives.typography.textFont,
         fontSize: '12px',
         fontStyle: 'normal',
         fontWeight: 600,
@@ -268,7 +269,7 @@ export const appTheme = {
         letterSpacing: '0.06px',
       },
       caption1: {
-        fontFamily: primitives.typography.fontFamily,
+        fontFamily: primitives.typography.textFont,
         fontSize: '10px',
         fontStyle: 'normal',
         fontWeight: 600,
@@ -276,7 +277,7 @@ export const appTheme = {
         letterSpacing: '0.1px',
       },
       caption2: {
-        fontFamily: primitives.typography.fontFamily,
+        fontFamily: primitives.typography.textFont,
         fontSize: '9px',
         fontStyle: ' normal',
         fontWeight: 600,
