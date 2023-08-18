@@ -24,6 +24,9 @@ const BaseIcon = styled.i`
 `;
 
 type IconProps = ComponentProps<typeof BaseIcon> & {
+  /**
+   * The name of the icon: https://fonts.google.com/icons
+   */
   name: MaterialIcon;
 };
 
