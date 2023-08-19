@@ -20,6 +20,7 @@ export const CheckboxRoot = styled(RadixCheckbox.Root)`
 
   width: 20px;
   height: 20px;
+  flex: 0 0 20px;
 
   &:hover {
     --border-color: ${({ theme }) => theme.colors.base.border.hovered};
@@ -44,4 +45,8 @@ export const CheckboxRoot = styled(RadixCheckbox.Root)`
   }
 `;
 
-export const CheckboxIndicator = styled(RadixCheckbox.Indicator)``;
+export const CheckboxIndicator = styled(RadixCheckbox.Indicator)`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;

@@ -1,6 +1,6 @@
 'use client';
 
-import type { MaterialIcon } from '@material-design-icons/font';
+import type { MaterialSymbol } from 'material-symbols';
 import { styled } from 'styled-components';
 import { primitives } from '../AppTheme/appTheme';
 import { ComponentProps } from 'react';
@@ -27,7 +27,7 @@ type IconProps = ComponentProps<typeof BaseIcon> & {
   /**
    * The name of the icon: https://fonts.google.com/icons
    */
-  name: MaterialIcon;
+  name: MaterialSymbol;
 };
 
 export function Icon({ name, ...iconProps }: IconProps) {

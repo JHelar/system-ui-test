@@ -24,16 +24,3 @@ export const Checked: Story = {
     checked: true,
   },
 };
-
-export const WithLabel: Story = {
-  args: {
-    label: 'Label',
-  },
-};
-
-export const WithLabelAndDescription: Story = {
-  args: {
-    label: 'Label',
-    description: 'Description',
-  },
-};

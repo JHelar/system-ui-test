@@ -9,13 +9,18 @@ export default {
     name: 'story',
     disabled: false,
     defaultChecked: false,
-    label: undefined,
-    description: undefined,
   },
 } satisfies Meta<typeof Checkbox>;
 
 type Story = StoryObj<typeof Checkbox>;
 export const Default: Story = {};
+
+export const Mixed: Story = {
+  args: {
+    checked: true,
+    variant: 'mixed',
+  },
+};
 
 export const Disabled: Story = {
   args: {
@@ -26,18 +31,5 @@ export const Disabled: Story = {
 export const Checked: Story = {
   args: {
     checked: true,
-  },
-};
-
-export const WithLabel: Story = {
-  args: {
-    label: 'Label',
-  },
-};
-
-export const WithLabelAndDescription: Story = {
-  args: {
-    label: 'Label',
-    description: 'Description',
   },
 };

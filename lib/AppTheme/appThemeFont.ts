@@ -9,7 +9,7 @@ export const interFont = Inter({
 });
 
 export const materialIconsFont = localFont({
-  src: '../../node_modules/@material-design-icons/font/material-icons-round.woff2',
+  src: '../../node_modules/material-symbols/material-symbols-rounded.woff2',
   display: 'block',
   style: 'normal',
 });

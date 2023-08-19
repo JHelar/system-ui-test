@@ -3,7 +3,7 @@ import CopyPlugin from 'copy-webpack-plugin';
 import path from 'path';
 
 const MATERIAL_ICONS_FONT_NODE_MODULE_PATH =
-  'node_modules/@material-design-icons/font/material-icons-round.woff2';
+  'node_modules/material-symbols/material-symbols-rounded.woff2';
 
 const config: StorybookConfig = {
   stories: ['../lib/**/*.mdx', '../lib/**/*.stories.@(js|jsx|mjs|ts|tsx)'],

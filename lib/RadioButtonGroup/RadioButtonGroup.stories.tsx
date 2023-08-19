@@ -19,29 +19,3 @@ export const Disabled: Story = {
     disabled: true,
   },
 };
-
-export const WithLabel: Story = {
-  args: {
-    children: <RadioButton value='value1' label='Label' />,
-  },
-};
-
-export const WithLabelAndDescription: Story = {
-  args: {
-    children: (
-      <RadioButton value='value1' label='Label' description='Description' />
-    ),
-  },
-};
-
-export const MultipleRadioButtons: Story = {
-  args: {
-    children: (
-      <>
-        <RadioButton value='value1' label='Label' description='Description' />
-        <RadioButton value='value2' label='Label' description='Description' />
-        <RadioButton value='value3' label='Label' description='Description' />
-      </>
-    ),
-  },
-};

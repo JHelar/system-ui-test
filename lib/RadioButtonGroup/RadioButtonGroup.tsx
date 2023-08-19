@@ -4,42 +4,14 @@ import {
   RadioButtonIndicator,
   RadioButtonItem,
 } from './RadioButtonGroup.styles';
-import { isDefined } from '../utils/isDefined';
-import { InputRow, InputRowDescription, InputRowLabel } from '../InputRow';
 
-type RadioButtonProps = ComponentProps<typeof RadioButtonItem> & {
-  label?: string;
-  description?: string;
-};
+type RadioButtonProps = ComponentProps<typeof RadioButtonItem>;
 
-export function RadioButton({
-  label,
-  description,
-  id,
-  value,
-  className,
-  ...radioButtonItemProps
-}: RadioButtonProps) {
-  const htmlFor = id ?? value;
-
-  const Description = isDefined(description) && (
-    <InputRowDescription>{description}</InputRowDescription>
-  );
-
-  const Label = isDefined(label) && (
-    <InputRowLabel htmlFor={htmlFor}>
-      {label}
-      {Description}
-    </InputRowLabel>
-  );
-
+export function RadioButton({ ...radioButtonItemProps }: RadioButtonProps) {
   return (
-    <InputRow className={className}>
-      <RadioButtonItem value={value} id={htmlFor} {...radioButtonItemProps}>
-        <RadioButtonIndicator />
-      </RadioButtonItem>
-      {Label}
-    </InputRow>
+    <RadioButtonItem {...radioButtonItemProps}>
+      <RadioButtonIndicator />
+    </RadioButtonItem>
   );
 }
 

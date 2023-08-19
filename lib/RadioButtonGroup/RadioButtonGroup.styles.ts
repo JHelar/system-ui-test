@@ -1,11 +1,7 @@
 import { css, styled } from 'styled-components';
 import * as RadixRadioGroup from '@radix-ui/react-radio-group';
 
-export const RadioButtonGroupRoot = styled(RadixRadioGroup.Root)`
-  display: flex;
-  flex-flow: column;
-  row-gap: ${({ theme }) => theme.spacing.xSmall};
-`;
+export const RadioButtonGroupRoot = styled(RadixRadioGroup.Root)``;
 
 export const RadioButtonItem = styled(RadixRadioGroup.Item)`
   --border-color: ${({ theme }) => theme.colors.base.border.normal};
@@ -22,6 +18,7 @@ export const RadioButtonItem = styled(RadixRadioGroup.Item)`
 
   width: 20px;
   height: 20px;
+  flex: 0 0 20px;
 
   &:hover {
     --border-color: ${({ theme }) => theme.colors.base.border.hovered};
