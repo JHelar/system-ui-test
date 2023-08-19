@@ -1,0 +1,43 @@
+import { css, styled } from 'styled-components';
+
+const baseStyles = css`
+  --border-color: ${({ theme }) => theme.colors.base.border.normal};
+
+  display: flex;
+  width: 100%;
+  padding: ${({ theme }) => theme.spacing.xxSmall}
+    ${({ theme }) => theme.spacing.medium};
+  border-radius: ${({ theme }) => theme.radius.xSmall};
+  border: 1px solid var(--border-color);
+  background-color: ${({ theme }) => theme.colors.base.background.normal};
+
+  color: ${({ theme }) => theme.colors.base.text.highContrast};
+  ${({ theme }) => css(theme.text.regular.body)};
+
+  &::placeholder {
+    color: ${({ theme }) => theme.colors.base.text.lowContrast};
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:focus-visible {
+    outline: 2px solid ${({ theme }) => theme.colors.accent.border.normal};
+    outline-offset: -2px;
+  }
+
+  &:disabled {
+    opacity: 0.3;
+  }
+`;
+
+export const BaseInputField = styled.input`
+  ${baseStyles}
+`;
+
+export const BaseTextArea = styled.textarea`
+  resize: none;
+  min-height: ${({ theme }) => theme.size.xxSmall};
+  ${baseStyles}
+`;
