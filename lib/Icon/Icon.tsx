@@ -9,8 +9,8 @@ const BaseIcon = styled.i`
   font-family: ${primitives.typography.iconFont};
   font-weight: normal;
   font-style: normal;
-  font-size: 1em;
-  line-height: 1;
+  font-size: 20px;
+  line-height: 24px;
   letter-spacing: normal;
   text-transform: none;
   display: inline-block;

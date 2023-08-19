@@ -9,6 +9,15 @@ const GlobalStyle = createGlobalStyle`
     font-family: ${primitives.typography.textFont};
     font-size: 100%;
   }
+  html,
+  body {
+    padding: 0;
+    margin: 0;
+    
+    * {
+      box-sizing: border-box;
+    }
+  }
 `;
 
 export function AppThemeProvider({ children }: PropsWithChildren) {
