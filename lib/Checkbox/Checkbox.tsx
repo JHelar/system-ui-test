@@ -1,4 +1,3 @@
-import * as RadixCheckbox from '@radix-ui/react-checkbox';
 import { Icon } from '../Icon';
 import {
   CheckboxIndicator,
