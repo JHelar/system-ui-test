@@ -25,15 +25,18 @@ export function Checkbox({
   label,
   description,
   name,
+  id,
   className,
   ...checkboxProps
 }: CheckboxProps) {
+  const htmlFor = id ?? name;
+
   const Description = isDefined(description) && (
     <StyledDescription>{description}</StyledDescription>
   );
 
   const Label = isDefined(label) && (
-    <StyledLabel htmlFor={name}>
+    <StyledLabel htmlFor={htmlFor}>
       {label}
       {Description}
     </StyledLabel>
@@ -41,7 +44,7 @@ export function Checkbox({
 
   return (
     <CheckboxWrapper className={className}>
-      <CheckboxRoot {...checkboxProps} id={name}>
+      <CheckboxRoot {...checkboxProps} id={htmlFor}>
         <CheckboxIndicator>
           <Icon name='check' />
         </CheckboxIndicator>
