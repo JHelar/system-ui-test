@@ -1,13 +1,8 @@
 import { Icon } from '../Icon';
-import {
-  CheckboxIndicator,
-  CheckboxRoot,
-  CheckboxWrapper,
-  StyledDescription,
-  StyledLabel,
-} from './Checkbox.styles';
+import { CheckboxIndicator, CheckboxRoot } from './Checkbox.styles';
 import { ComponentProps } from 'react';
 import { isDefined } from '../utils/isDefined';
+import { InputRow, InputRowDescription, InputRowLabel } from '../InputRow';
 
 type CheckboxProps = ComponentProps<typeof CheckboxRoot> & {
   /** Assign a label to be rendered together with the checkbox */
@@ -32,24 +27,24 @@ export function Checkbox({
   const htmlFor = id ?? name;
 
   const Description = isDefined(description) && (
-    <StyledDescription>{description}</StyledDescription>
+    <InputRowDescription>{description}</InputRowDescription>
   );
 
   const Label = isDefined(label) && (
-    <StyledLabel htmlFor={htmlFor}>
+    <InputRowLabel htmlFor={htmlFor}>
       {label}
       {Description}
-    </StyledLabel>
+    </InputRowLabel>
   );
 
   return (
-    <CheckboxWrapper className={className}>
-      <CheckboxRoot {...checkboxProps} id={htmlFor}>
+    <InputRow className={className}>
+      <CheckboxRoot name={name} {...checkboxProps} id={htmlFor}>
         <CheckboxIndicator>
           <Icon name='check' />
         </CheckboxIndicator>
       </CheckboxRoot>
       {Label}
-    </CheckboxWrapper>
+    </InputRow>
   );
 }

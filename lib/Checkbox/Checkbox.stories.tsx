@@ -8,6 +8,7 @@ export default {
   args: {
     name: 'story',
     disabled: false,
+    defaultChecked: false,
     label: undefined,
     description: undefined,
   },

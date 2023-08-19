@@ -14,7 +14,7 @@ export const CheckboxRoot = styled(RadixCheckbox.Root)`
 
   border: 1px solid var(--border-color);
   background-color: var(--background-color);
-  border-radius: ${({ theme }) => theme.spacing.xSmall};
+  border-radius: ${({ theme }) => theme.radius.xSmall};
 
   color: ${({ theme }) => theme.colors.special.fixed.white};
 
@@ -45,25 +45,3 @@ export const CheckboxRoot = styled(RadixCheckbox.Root)`
 `;
 
 export const CheckboxIndicator = styled(RadixCheckbox.Indicator)``;
-
-export const StyledLabel = styled.label`
-  display: flex;
-  flex-flow: column;
-  row-gap: ${({ theme }) => theme.spacing.medium};
-  color: ${({ theme }) => theme.colors.base.text.highContrast};
-  ${({ theme }) => css(theme.text.regular.body)}
-`;
-
-export const StyledDescription = styled.p`
-  all: unset;
-
-  display: block;
-  color: ${({ theme }) => theme.colors.base.text.lowContrast};
-  ${({ theme }) => css(theme.text.regular.subheadline)}
-`;
-
-export const CheckboxWrapper = styled.div`
-  display: flex;
-  flex-flow: row nowrap;
-  column-gap: ${({ theme }) => theme.spacing.medium};
-`;
