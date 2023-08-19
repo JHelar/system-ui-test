@@ -5,11 +5,12 @@ import { Button } from '../Button';
 export default {
   title: 'Components / ButtonGroup',
   component: ButtonGroup,
+  tags: ['autodocs'],
 } satisfies Meta<typeof ButtonGroup>;
 
 type Story = StoryObj<typeof ButtonGroup>;
 
-export const One: Story = {
+export const OneButton: Story = {
   render: () => (
     <ButtonGroup>
       <Button variant='normalSolid'>Action</Button>
@@ -17,7 +18,7 @@ export const One: Story = {
   ),
 };
 
-export const Two: Story = {
+export const TwoButtons: Story = {
   render: () => (
     <ButtonGroup>
       <Button variant='normal'>Cancel</Button>
@@ -26,7 +27,7 @@ export const Two: Story = {
   ),
 };
 
-export const Three: Story = {
+export const ThreeButtons: Story = {
   render: () => (
     <ButtonGroup>
       <Button variant='normal'>Cancel</Button>
