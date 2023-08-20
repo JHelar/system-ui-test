@@ -10,7 +10,8 @@ export const CheckboxRoot = styled(RadixCheckbox.Root)`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: ${({ theme }) => theme.spacing.xxSmall};
+  margin: ${({ theme }) =>
+    `calc(${theme.spacing.xxSmall} + ${theme.spacing.xSmall}) calc(${theme.spacing.xxSmall} + ${theme.spacing.medium})`};
 
   border: 1px solid var(--border-color);
   background-color: var(--background-color);

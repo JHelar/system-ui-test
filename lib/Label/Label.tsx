@@ -2,8 +2,7 @@ import { css, styled } from 'styled-components';
 
 const baseStyle = css`
   all: unset;
-  padding: ${({ theme }) => theme.spacing.xSmall}
-    ${({ theme }) => theme.spacing.medium};
+  padding: ${({ theme }) => `${theme.spacing.xSmall} ${theme.spacing.medium}`};
 `;
 
 const variants = {

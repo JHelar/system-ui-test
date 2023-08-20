@@ -7,9 +7,12 @@ type BaseStyleProps = {
 };
 
 export const baseStyle = css<BaseStyleProps>`
+  all: unset;
+
   display: flex;
   column-gap: ${({ theme }) => theme.spacing.xSmall};
   padding: ${({ theme }) => `${theme.spacing.xxSmall} ${theme.spacing.medium}`};
+  margin: ${({ theme }) => `${theme.spacing.xxSmall} 0px`};
   justify-content: center;
   align-items: center;
 

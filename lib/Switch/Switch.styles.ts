@@ -12,6 +12,7 @@ export const SwitchRoot = styled(RadixSwitch.Root)`
   position: relative;
   background-color: var(--background-color);
   border-radius: ${({ theme }) => theme.radius.xxLarge};
+  margin: ${({ theme }) => `${theme.spacing.xSmall} ${theme.spacing.medium}`};
 
   &:hover {
     --background-color: ${({ theme }) => theme.colors.base.fill.hovered};

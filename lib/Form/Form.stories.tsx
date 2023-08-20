@@ -5,6 +5,7 @@ import {
   FormLabel,
   FormLabelDescription,
   Form,
+  FormFieldRow,
 } from './Form';
 import { RadioButton, RadioButtonGroup } from '../RadioButtonGroup';
 import { Checkbox } from '../Checkbox';
@@ -28,10 +29,10 @@ export const RowWithRadioButton: Story = {
           <FormControl>
             <RadioButton value='radio-value1' />
           </FormControl>
-          <FormLabel>
-            Label
+          <FormFieldRow>
+            <FormLabel>Label</FormLabel>
             <FormLabelDescription>Description</FormLabelDescription>
-          </FormLabel>
+          </FormFieldRow>
         </FormField>
       </RadioButtonGroup>
     </Form>
@@ -45,10 +46,10 @@ export const RowWithCheckbox: Story = {
         <FormControl>
           <Checkbox value='radio-value1' />
         </FormControl>
-        <FormLabel>
-          Label
+        <FormFieldRow>
+          <FormLabel>Label</FormLabel>
           <FormLabelDescription>Description</FormLabelDescription>
-        </FormLabel>
+        </FormFieldRow>
       </FormField>
     </Form>
   ),
@@ -58,10 +59,10 @@ export const RowWithSwitch: Story = {
   render: (props) => (
     <Form {...props}>
       <FormField name='storybook-switch'>
-        <FormLabel>
-          Label
+        <FormFieldRow>
+          <FormLabel>Label</FormLabel>
           <FormLabelDescription>Description</FormLabelDescription>
-        </FormLabel>
+        </FormFieldRow>
         <FormControl>
           <Switch value='radio-value1' />
         </FormControl>

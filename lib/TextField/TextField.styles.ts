@@ -5,8 +5,8 @@ const baseStyles = css`
 
   display: flex;
   width: 100%;
-  padding: ${({ theme }) => theme.spacing.xxSmall}
-    ${({ theme }) => theme.spacing.medium};
+  padding: ${({ theme }) => `${theme.spacing.xxSmall} ${theme.spacing.medium}`};
+  margin: ${({ theme }) => `${theme.spacing.xxSmall} 0px`};
   border-radius: ${({ theme }) => theme.radius.xSmall};
   border: 1px solid var(--border-color);
   background-color: ${({ theme }) => theme.colors.base.background.normal};

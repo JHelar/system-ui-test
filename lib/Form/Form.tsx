@@ -4,26 +4,38 @@ import { ComponentProps } from 'react';
 import { Button } from '../Button';
 
 export const FormLabel = styled(RadixForm.Label)`
-  flex: 1;
-  display: flex;
-  flex-flow: column;
-  row-gap: ${({ theme }) => theme.spacing.medium};
+  all: unset;
+  display: block;
+
   color: ${({ theme }) => theme.colors.base.text.highContrast};
+  padding: ${({ theme }) =>
+    `${theme.spacing.xSmall} ${theme.spacing.medium} ${theme.spacing.xSmall} 0px`};
   ${({ theme }) => css(theme.text.regular.body)}
 `;
 
 export const FormLabelDescription = styled.p`
   all: unset;
-
   display: block;
+
+  grid-area: description;
+
   color: ${({ theme }) => theme.colors.base.text.lowContrast};
+  padding: ${({ theme }) =>
+    `${theme.spacing.xSmall} ${theme.spacing.medium} ${theme.spacing.xSmall} 0px`};
   ${({ theme }) => css(theme.text.regular.subheadline)}
 `;
 
 export const FormField = styled(RadixForm.Field)`
   display: flex;
   flex-flow: row nowrap;
+
   column-gap: ${({ theme }) => theme.spacing.medium};
+`;
+
+export const FormFieldRow = styled.div`
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 `;
 
 /** Form component based on [Radix form](https://www.radix-ui.com/primitives/docs/components/form) */
