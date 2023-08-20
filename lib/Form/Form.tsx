@@ -28,7 +28,7 @@ export const FormLabelDescription = styled.p`
 export const FormField = styled(RadixForm.Field)`
   display: flex;
   flex-flow: row nowrap;
-
+  align-items: flex-start;
   column-gap: ${({ theme }) => theme.spacing.medium};
 `;
 

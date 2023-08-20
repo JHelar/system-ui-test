@@ -10,6 +10,7 @@ import {
 import { RadioButton, RadioButtonGroup } from '../RadioButtonGroup';
 import { Checkbox } from '../Checkbox';
 import { Switch } from '../Switch';
+import { Button } from '../Button';
 
 export default {
   title: 'Components / Form',
@@ -65,6 +66,24 @@ export const RowWithSwitch: Story = {
         </FormFieldRow>
         <FormControl>
           <Switch value='radio-value1' />
+        </FormControl>
+      </FormField>
+    </Form>
+  ),
+};
+
+export const RowWithButton: Story = {
+  render: (props) => (
+    <Form {...props}>
+      <FormField name='storybook-switch'>
+        <FormFieldRow>
+          <FormLabel>Label</FormLabel>
+          <FormLabelDescription>Description</FormLabelDescription>
+        </FormFieldRow>
+        <FormControl>
+          <Button type='button' variant='normal'>
+            Action
+          </Button>
         </FormControl>
       </FormField>
     </Form>
