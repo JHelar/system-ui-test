@@ -1,0 +1,24 @@
+import { Meta, StoryObj } from '@storybook/react';
+import { RowWithTextField } from './Row';
+import { Label } from '../Label';
+import { TextField } from '../TextField';
+
+export default {
+  title: 'Components / Row / RowWithTextField',
+  component: RowWithTextField,
+  args: {
+    label: (props) => <Label {...props}>Label</Label>,
+    textField: (props) => (
+      <TextField {...props} variant='simple' placeholder='Placeholder' />
+    ),
+    description: (props) => <Label {...props}>Description</Label>,
+  },
+} satisfies Meta<typeof RowWithTextField>;
+
+export const Default: StoryObj<typeof RowWithTextField> = {};
+
+export const WithInstruction: StoryObj<typeof RowWithTextField> = {
+  args: {
+    instruction: (props) => <Label {...props}>Instruction</Label>,
+  },
+};
