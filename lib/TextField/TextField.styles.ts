@@ -33,6 +33,7 @@ const baseStyles = css`
 `;
 
 export const BaseInputField = styled.input`
+  height: 28px;
   ${baseStyles}
 `;
 

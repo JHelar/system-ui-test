@@ -12,7 +12,6 @@ export const CheckboxRoot = styled(RadixCheckbox.Root)`
   align-items: center;
   margin: ${({ theme }) =>
     `calc(${theme.spacing.xxSmall} + ${theme.spacing.xSmall}) calc(${theme.spacing.xxSmall} + ${theme.spacing.medium})`};
-
   border: 1px solid var(--border-color);
   background-color: var(--background-color);
   border-radius: ${({ theme }) => theme.radius.xSmall};
@@ -21,7 +20,6 @@ export const CheckboxRoot = styled(RadixCheckbox.Root)`
 
   width: 20px;
   height: 20px;
-  flex: 0 0 20px;
 
   &:hover {
     --border-color: ${({ theme }) => theme.colors.base.border.hovered};

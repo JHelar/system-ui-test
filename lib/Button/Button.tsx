@@ -1,26 +1,21 @@
-import type { ComponentPropsWithRef } from 'react';
-import {
-  BaseButton,
-  BaseButtonProps,
-  ButtonVariant,
-  StyledIcon,
-} from './Button.styles';
+import { PolymorphicComponentProps } from '../types';
+import { BaseButton, ButtonVariant, StyledIcon } from './Button.styles';
 
-type ButtonProps = Omit<
-  ComponentPropsWithRef<typeof BaseButton>,
-  keyof BaseButtonProps
-> & {
+type ButtonProps = {
   /** Variant of button to render */
   variant?: ButtonVariant;
   /** Set if the button is in a loading state */
   loading?: boolean;
+
+  className?: string;
 };
-export function Button({
+
+export function Button<AsTarget extends React.ElementType>({
   variant = 'normal',
   children,
   loading = false,
   ...buttonProps
-}: ButtonProps) {
+}: PolymorphicComponentProps<AsTarget, ButtonProps>) {
   const LoadingIcon = loading && <StyledIcon name='sync' />;
   return (
     <BaseButton {...buttonProps} $variant={variant} $loading={loading}>
