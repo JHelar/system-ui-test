@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
-import { Icon } from '../Icon';
-import { spinAnimation } from '../animations';
+import { Icon, IconProps } from '../Icon';
+import { spin45degIncrements } from '../animations';
 
 type BaseStyleProps = {
   $loading: boolean;
@@ -133,6 +133,6 @@ export const BaseButton = styled.button<BaseButtonProps>`
   ${({ $variant }) => variants[$variant]}
 `;
 
-export const StyledIcon = styled(Icon)`
-  ${spinAnimation}
+export const SpinnerIcon = styled(Icon)`
+  ${spin45degIncrements}
 `;

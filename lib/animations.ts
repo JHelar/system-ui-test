@@ -9,10 +9,10 @@ const spin = keyframes`
     }
 `;
 
-export const spinAnimation = css`
+export const spin45degIncrements = css`
   animation-name: ${spin};
   animation-duration: 1s;
   animation-direction: normal;
-  animation-timing-function: linear;
+  animation-timing-function: steps(8, end);
   animation-iteration-count: infinite;
 `;
