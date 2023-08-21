@@ -8,6 +8,7 @@ type PropsOf<
 
 export interface AsProps<E extends React.ElementType = React.ElementType> {
   as?: E;
+  className?: string;
 }
 
 export type AsComponentProps<E extends React.ElementType> = AsProps<E> &

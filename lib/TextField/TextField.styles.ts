@@ -22,6 +22,10 @@ const baseStyles = css`
     outline: none;
   }
 
+  &:hover {
+    --border-color: ${({ theme }) => theme.colors.base.border.hovered};
+  }
+
   &:focus-visible {
     outline: 2px solid ${({ theme }) => theme.colors.accent.border.normal};
     outline-offset: -2px;
