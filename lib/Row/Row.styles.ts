@@ -4,38 +4,28 @@ type WrapperProps = {
   direction: 'row' | 'column';
 };
 
-const labelStyle = css<WrapperProps>`
+const baseStyles = css<WrapperProps>`
   .row-label {
     flex: 1 1 50%;
     ${({ direction }) => direction === 'row' && `padding-left: 0px`}
   }
-`;
-
-const descriptionStyle = css<WrapperProps>`
   .row-description {
     color: ${({ theme }) => theme.colors.base.text.lowContrast};
     ${({ direction }) => direction === 'row' && `padding-left: 0px`}
   }
-`;
-
-const textFieldStyle = css<WrapperProps>`
   .row-text-field {
     flex: 1 1 50%;
   }
-`;
-
-const instructionStyle = css<WrapperProps>`
+  .row-progress-bar {
+    flex: 1 1 auto;
+  }
+  .row-progress-slot {
+    flex: 0 0 0%;
+  }
   .row-instruction {
     color: ${({ theme }) => theme.colors.destructive.text.lowContrast};
     ${({ direction }) => direction === 'row' && `padding-left: 0px`}
   }
-`;
-
-const baseStyles = css<WrapperProps>`
-  ${labelStyle}
-  ${descriptionStyle}
-  ${textFieldStyle}
-  ${instructionStyle}
 `;
 
 export const RowWrapper = styled.div<WrapperProps>`

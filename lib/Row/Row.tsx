@@ -148,3 +148,34 @@ export function RowWithTextField({
     </RowWrapper>
   );
 }
+
+type RowWithProgressBarProps = {
+  progressBar: RenderSlot<{ className: string }>;
+  slot?: RenderSlot<{ className: string }>;
+} & BaseRowProps;
+export function RowWithProgressBar({
+  label,
+  description,
+  progressBar,
+  slot,
+  ...wrapperProps
+}: RowWithProgressBarProps) {
+  const Label = label({ variant: 'body', className: 'row-label' });
+  const Description =
+    isDefined(description) &&
+    description({ variant: 'subheadline', className: 'row-description' });
+
+  const ProgressBar = progressBar({ className: 'row-progress-bar' });
+  const Slot = isDefined(slot) && slot({ className: 'row-slot' });
+
+  return (
+    <RowWrapper direction='column' {...wrapperProps}>
+      {Label}
+      <StyledFlexRow>
+        {ProgressBar}
+        {Slot}
+      </StyledFlexRow>
+      {Description}
+    </RowWrapper>
+  );
+}

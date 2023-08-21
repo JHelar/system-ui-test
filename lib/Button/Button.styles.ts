@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { Icon, IconProps } from '../Icon';
+import { Icon } from '../Icon';
 import { spin45degIncrements } from '../animations';
 
 type BaseStyleProps = {
