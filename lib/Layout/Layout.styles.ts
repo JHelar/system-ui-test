@@ -16,6 +16,7 @@ const baseStyles = css<WrapperProps>`
   .layout-suffix {
     color: ${({ theme }) => theme.colors.base.text.lowContrast};
   }
+  .layout-select-field,
   .layout-text-field {
     flex: 1 1 50%;
   }

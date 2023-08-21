@@ -224,3 +224,31 @@ export function ColumnWithTextField({
     </LayoutWrapper>
   );
 }
+
+type RowWithSelectProps = {
+  select: RenderSlot<{ className?: string }>;
+} & BaseRowProps;
+
+export function RowWithSelect({
+  label,
+  select,
+  description,
+  ...wrapperProps
+}: RowWithSelectProps) {
+  const Label = label({ variant: 'body', className: 'layout-label' });
+  const Description =
+    isDefined(description) &&
+    description({ variant: 'subheadline', className: 'layout-description' });
+
+  const Select = select({ className: 'layout-select-field' });
+
+  return (
+    <LayoutWrapper direction='column' {...wrapperProps}>
+      <StyledFlexRow>
+        {Label}
+        {Select}
+      </StyledFlexRow>
+      {Description}
+    </LayoutWrapper>
+  );
+}
