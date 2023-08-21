@@ -5,30 +5,33 @@ type WrapperProps = {
 };
 
 const baseStyles = css<WrapperProps>`
-  .row-label {
+  .layout-label {
     flex: 1 1 50%;
     ${({ direction }) => direction === 'row' && `padding-left: 0px`}
   }
-  .row-description {
+  .layout-description {
     color: ${({ theme }) => theme.colors.base.text.lowContrast};
     ${({ direction }) => direction === 'row' && `padding-left: 0px`}
   }
-  .row-text-field {
+  .layout-suffix {
+    color: ${({ theme }) => theme.colors.base.text.lowContrast};
+  }
+  .layout-text-field {
     flex: 1 1 50%;
   }
-  .row-progress-bar {
+  .layout-progress-bar {
     flex: 1 1 auto;
   }
-  .row-progress-slot {
+  .layout-progress-slot {
     flex: 0 0 0%;
   }
-  .row-instruction {
+  .layout-instruction {
     color: ${({ theme }) => theme.colors.destructive.text.lowContrast};
     ${({ direction }) => direction === 'row' && `padding-left: 0px`}
   }
 `;
 
-export const RowWrapper = styled.div<WrapperProps>`
+export const LayoutWrapper = styled.div<WrapperProps>`
   display: flex;
   flex-direction: ${({ direction }) => direction};
   ${baseStyles}

@@ -1,10 +1,10 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { RowWithButton } from './Row';
+import { RowWithButton } from './Layout';
 import { Label } from '../Label';
 import { Button } from '../Button';
 
 export default {
-  title: 'Components / Row / RowWithButton',
+  title: 'Components / Layout / RowWithButton',
   component: RowWithButton,
   args: {
     label: (props) => <Label {...props}>Label</Label>,

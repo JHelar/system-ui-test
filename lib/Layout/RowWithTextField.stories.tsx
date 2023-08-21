@@ -1,10 +1,10 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { RowWithTextField } from './Row';
+import { RowWithTextField } from './Layout';
 import { Label } from '../Label';
 import { TextField } from '../TextField';
 
 export default {
-  title: 'Components / Row / RowWithTextField',
+  title: 'Components / Layout / RowWithTextField',
   component: RowWithTextField,
   args: {
     label: (props) => <Label {...props}>Label</Label>,

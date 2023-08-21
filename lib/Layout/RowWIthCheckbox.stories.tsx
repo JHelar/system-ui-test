@@ -1,10 +1,10 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { RowWithCheckbox } from './Row';
+import { RowWithCheckbox } from './Layout';
 import { Label } from '../Label';
 import { Checkbox } from '../Checkbox';
 
 export default {
-  title: 'Components / Row / RowWithCheckbox',
+  title: 'Components / Layout / RowWithCheckbox',
   component: RowWithCheckbox,
   args: {
     label: (props) => <Label {...props}>Label</Label>,

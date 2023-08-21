@@ -1,12 +1,12 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { RowWithProgressBar } from './Row';
+import { RowWithProgressBar } from './Layout';
 import { Label } from '../Label';
 import { ProgressBar } from '../ProgressBar';
 import { Icon } from '../Icon';
 import { Button } from '../Button';
 
 export default {
-  title: 'Components / Row / RowWithProgressBar',
+  title: 'Components / Layout / RowWithProgressBar',
   component: RowWithProgressBar,
   args: {
     label: (props) => <Label {...props}>Label</Label>,

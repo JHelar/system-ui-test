@@ -1,10 +1,10 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { RowWithSwitch } from './Row';
+import { RowWithSwitch } from './Layout';
 import { Label } from '../Label';
 import { Switch } from '../Switch';
 
 export default {
-  title: 'Components / Row / RowWithSwitch',
+  title: 'Components / Layout / RowWithSwitch',
   component: RowWithSwitch,
   args: {
     label: (props) => <Label {...props}>Label</Label>,

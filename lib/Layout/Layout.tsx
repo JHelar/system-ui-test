@@ -1,7 +1,11 @@
 import { RenderSlot } from '../types';
 import { isDefined } from '../utils/isDefined';
 import { LabelProps } from '../Label';
-import { StyledFlexRow, StyledFlexColumn, RowWrapper } from './Row.styles';
+import {
+  StyledFlexRow,
+  StyledFlexColumn,
+  LayoutWrapper,
+} from './Layout.styles';
 
 type BaseRowProps = {
   className?: string;
@@ -19,20 +23,20 @@ export function RowWithButton({
   description,
   ...wrapperProps
 }: RowWithButtonProps) {
-  const Label = label({ variant: 'body', className: 'row-label' });
+  const Label = label({ variant: 'body', className: 'layout-label' });
   const Description =
     isDefined(description) &&
-    description({ variant: 'subheadline', className: 'row-description' });
+    description({ variant: 'subheadline', className: 'layout-description' });
   const Button = button();
 
   return (
-    <RowWrapper direction='column' {...wrapperProps}>
+    <LayoutWrapper direction='column' {...wrapperProps}>
       <StyledFlexRow>
         {Label}
         {Button}
       </StyledFlexRow>
       {Description}
-    </RowWrapper>
+    </LayoutWrapper>
   );
 }
 
@@ -45,20 +49,20 @@ export function RowWithRadiobutton({
   radioButton,
   ...wrapperProps
 }: RowWithRadioButtonProps) {
-  const Label = label({ variant: 'body', className: 'row-label' });
+  const Label = label({ variant: 'body', className: 'layout-label' });
   const Description =
     isDefined(description) &&
-    description({ variant: 'subheadline', className: 'row-description' });
+    description({ variant: 'subheadline', className: 'layout-description' });
   const RadioButton = radioButton();
 
   return (
-    <RowWrapper direction='row' {...wrapperProps}>
+    <LayoutWrapper direction='row' {...wrapperProps}>
       {RadioButton}
       <StyledFlexColumn>
         {Label}
         {Description}
       </StyledFlexColumn>
-    </RowWrapper>
+    </LayoutWrapper>
   );
 }
 
@@ -71,20 +75,20 @@ export function RowWithCheckbox({
   checkbox,
   ...wrapperProps
 }: RowWithCheckboxProps) {
-  const Label = label({ variant: 'body', className: 'row-label' });
+  const Label = label({ variant: 'body', className: 'layout-label' });
   const Description =
     isDefined(description) &&
-    description({ variant: 'subheadline', className: 'row-description' });
+    description({ variant: 'subheadline', className: 'layout-description' });
   const Checkbox = checkbox();
 
   return (
-    <RowWrapper direction='row' {...wrapperProps}>
+    <LayoutWrapper direction='row' {...wrapperProps}>
       {Checkbox}
       <StyledFlexColumn>
         {Label}
         {Description}
       </StyledFlexColumn>
-    </RowWrapper>
+    </LayoutWrapper>
   );
 }
 
@@ -98,20 +102,20 @@ export function RowWithSwitch({
   description,
   ...wrapperProps
 }: RowWithSwitchProps) {
-  const Label = label({ variant: 'body', className: 'row-label' });
+  const Label = label({ variant: 'body', className: 'layout-label' });
   const Description =
     isDefined(description) &&
-    description({ variant: 'subheadline', className: 'row-description' });
+    description({ variant: 'subheadline', className: 'layout-description' });
   const Switch = switchRenderFunc();
 
   return (
-    <RowWrapper direction='column' {...wrapperProps}>
+    <LayoutWrapper direction='column' {...wrapperProps}>
       <StyledFlexRow>
         {Label}
         {Switch}
       </StyledFlexRow>
       {Description}
-    </RowWrapper>
+    </LayoutWrapper>
   );
 }
 
@@ -127,25 +131,25 @@ export function RowWithTextField({
   instruction,
   ...wrapperProps
 }: RowWithTextFieldProps) {
-  const Label = label({ variant: 'body', className: 'row-label' });
+  const Label = label({ variant: 'body', className: 'layout-label' });
   const Description =
     isDefined(description) &&
-    description({ variant: 'subheadline', className: 'row-description' });
+    description({ variant: 'subheadline', className: 'layout-description' });
   const Instruction =
     isDefined(instruction) &&
-    instruction({ variant: 'subheadline', className: 'row-instruction' });
+    instruction({ variant: 'subheadline', className: 'layout-instruction' });
 
-  const TextField = textField({ className: 'row-text-field' });
+  const TextField = textField({ className: 'layout-text-field' });
 
   return (
-    <RowWrapper direction='column' {...wrapperProps}>
+    <LayoutWrapper direction='column' {...wrapperProps}>
       <StyledFlexRow>
         {Label}
         {TextField}
       </StyledFlexRow>
       {Instruction}
       {Description}
-    </RowWrapper>
+    </LayoutWrapper>
   );
 }
 
@@ -160,22 +164,63 @@ export function RowWithProgressBar({
   slot,
   ...wrapperProps
 }: RowWithProgressBarProps) {
-  const Label = label({ variant: 'body', className: 'row-label' });
+  const Label = label({ variant: 'body', className: 'layout-label' });
   const Description =
     isDefined(description) &&
-    description({ variant: 'subheadline', className: 'row-description' });
+    description({ variant: 'subheadline', className: 'layout-description' });
 
-  const ProgressBar = progressBar({ className: 'row-progress-bar' });
-  const Slot = isDefined(slot) && slot({ className: 'row-slot' });
+  const ProgressBar = progressBar({ className: 'layout-progress-bar' });
+  const Slot = isDefined(slot) && slot({ className: 'layout-slot' });
 
   return (
-    <RowWrapper direction='column' {...wrapperProps}>
+    <LayoutWrapper direction='column' {...wrapperProps}>
       {Label}
       <StyledFlexRow>
         {ProgressBar}
         {Slot}
       </StyledFlexRow>
       {Description}
-    </RowWrapper>
+    </LayoutWrapper>
+  );
+}
+
+type ColumnWithTextFieldProps = {
+  textField: RenderSlot<{ className?: string }>;
+  instruction?: RenderSlot<LabelProps>;
+  suffix?: RenderSlot<LabelProps>;
+} & BaseRowProps;
+export function ColumnWithTextField({
+  label,
+  description,
+  instruction,
+  suffix,
+  textField,
+}: ColumnWithTextFieldProps) {
+  const Label = label({ variant: 'body', className: 'layout-label' });
+
+  const Description =
+    isDefined(description) &&
+    description({ variant: 'subheadline', className: 'layout-description' });
+
+  const Suffix =
+    isDefined(suffix) &&
+    suffix({ variant: 'subheadline', className: 'layout-suffix' });
+
+  const Instruction =
+    isDefined(instruction) &&
+    instruction({ variant: 'subheadline', className: 'layout-instruction' });
+
+  const TextField = textField({ className: 'layout-text-field' });
+
+  return (
+    <LayoutWrapper direction='column'>
+      <StyledFlexRow>
+        {Label}
+        {Suffix}
+      </StyledFlexRow>
+      {TextField}
+      {Instruction}
+      {Description}
+    </LayoutWrapper>
   );
 }
