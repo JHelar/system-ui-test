@@ -39,3 +39,10 @@ export const Centered: Story = {
     height: 'tall',
   },
 };
+
+export const Empty: Story = {
+  args: {
+    variant: 'empty',
+    height: 'tall',
+  },
+};

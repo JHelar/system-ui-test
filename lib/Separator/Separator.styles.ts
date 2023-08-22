@@ -32,6 +32,11 @@ const variants = {
       left: ${({ theme }) => theme.spacing.medium};
     }
   `,
+  empty: css`
+    &::before {
+      content: none;
+    }
+  `,
 };
 
 export type SeparatorHeight = keyof typeof heights;
