@@ -1,12 +1,13 @@
 import { PropsWithChildren } from 'react';
-import { Label, LabelProps } from '../Label';
 import { PolymorphicComponentProps, RenderSlot } from '../types';
 import { isDefined } from '../utils/isDefined';
-import { BaseItem } from './SidebarItem.styles';
+import { BaseItem, StyledLabel, StyledSuffix } from './SidebarItem.styles';
 
 type SidebarItemProps = PropsWithChildren<{
+  selected?: boolean;
+  disabled?: boolean;
   leadingIcon?: RenderSlot<{ className: string }>;
-  suffix?: RenderSlot<LabelProps>;
+  suffix?: string;
   trailingIcon?: RenderSlot<{ className: string }>;
 }>;
 
@@ -15,6 +16,8 @@ export function SidebarItem<AsTarget extends React.ElementType>({
   leadingIcon,
   suffix,
   trailingIcon,
+  selected,
+  disabled,
   ...baseItemProps
 }: PolymorphicComponentProps<AsTarget, SidebarItemProps>) {
   const LeadingIcon =
@@ -25,14 +28,18 @@ export function SidebarItem<AsTarget extends React.ElementType>({
     isDefined(trailingIcon) &&
     trailingIcon({ className: 'sidebar-item-icon--trailing' });
 
-  const Suffix =
-    isDefined(suffix) &&
-    suffix({ variant: 'body', className: 'sidebar-item-suffix' });
+  const Suffix = isDefined(suffix) && (
+    <StyledSuffix variant='body'>{suffix}</StyledSuffix>
+  );
 
   return (
-    <BaseItem {...baseItemProps}>
+    <BaseItem
+      {...baseItemProps}
+      data-selected={selected || undefined}
+      data-disabled={disabled || undefined}
+    >
       {LeadingIcon}
-      <Label>{children}</Label>
+      <StyledLabel variant='body'>{children}</StyledLabel>
       {Suffix}
       {TrailingIcon}
     </BaseItem>
