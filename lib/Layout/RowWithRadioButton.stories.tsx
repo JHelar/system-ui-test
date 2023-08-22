@@ -8,7 +8,7 @@ export default {
   component: RowWithRadiobutton,
   args: {
     label: (props) => <Label {...props}>Label</Label>,
-    radioButton: () => <RadioButton value='storybook' />,
+    action: (props) => <RadioButton {...props} value='storybook' />,
     description: (props) => <Label {...props}>Description</Label>,
   },
 } satisfies Meta<typeof RowWithRadiobutton>;

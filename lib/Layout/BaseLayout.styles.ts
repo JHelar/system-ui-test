@@ -13,22 +13,22 @@ const baseStyles = css<WrapperProps>`
     color: ${({ theme }) => theme.colors.base.text.lowContrast};
     ${({ direction }) => direction === 'row' && `padding-left: 0px`}
   }
-  .layout-suffix {
-    color: ${({ theme }) => theme.colors.base.text.lowContrast};
-  }
-  .layout-select-field,
-  .layout-text-field {
-    flex: 1 1 50%;
-  }
-  .layout-progress-bar {
-    flex: 1 1 auto;
-  }
-  .layout-progress-slot {
-    flex: 0 0 0%;
-  }
   .layout-instruction {
     color: ${({ theme }) => theme.colors.destructive.text.lowContrast};
     ${({ direction }) => direction === 'row' && `padding-left: 0px`}
+  }
+  .layout-suffix {
+    color: ${({ theme }) => theme.colors.base.text.lowContrast};
+    flex: 0 0 0%;
+  }
+  .layout-action.layout-action--flex {
+    flex: 1 1 50%;
+  }
+  .layout-action.layout-action--flex-auto {
+    flex: 1 1 auto;
+  }
+  .layout-action-slot {
+    flex: 0 0 0%;
   }
 `;
 

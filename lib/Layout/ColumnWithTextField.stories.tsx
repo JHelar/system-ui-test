@@ -8,7 +8,7 @@ export default {
   component: ColumnWithTextField,
   args: {
     label: (props) => <Label {...props}>Label</Label>,
-    textField: (props) => (
+    action: (props) => (
       <TextField {...props} variant='simple' placeholder='Placeholder' />
     ),
     description: (props) => <Label {...props}>Description</Label>,

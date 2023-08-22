@@ -13,7 +13,7 @@ export default {
         Label
       </Label>
     ),
-    select: (props) => (
+    action: (props) => (
       <Select
         {...props}
         placeholder='Select'

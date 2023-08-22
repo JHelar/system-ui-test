@@ -4,7 +4,6 @@ const baseStyles = css`
   --border-color: ${({ theme }) => theme.colors.base.border.normal};
 
   display: flex;
-  width: 100%;
   padding: ${({ theme }) => `${theme.spacing.xxSmall} ${theme.spacing.medium}`};
   margin: ${({ theme }) => `${theme.spacing.xxSmall} 0px`};
   border-radius: ${({ theme }) => theme.radius.xSmall};

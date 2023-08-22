@@ -1,254 +1,53 @@
 import { RenderSlot } from '../types';
 import { isDefined } from '../utils/isDefined';
 import { LabelProps } from '../Label';
-import {
-  StyledFlexRow,
-  StyledFlexColumn,
-  LayoutWrapper,
-} from './Layout.styles';
+import { StyledFlexRow, LayoutWrapper } from './BaseLayout.styles';
+import { BaseLayoutProps } from './BaseLayout';
+import { BaseLayoutRow } from './BaseLayoutRow';
+import { BaseLayoutColumn, BaseLayoutColumnProps } from './BaseLayoutColumn';
 
-type BaseRowProps = {
-  className?: string;
-  label: RenderSlot<LabelProps>;
-  description?: RenderSlot<LabelProps>;
-};
-
-type RowWithButtonProps = {
-  button: RenderSlot;
-} & BaseRowProps;
-
-export function RowWithButton({
-  label,
-  button,
-  description,
-  ...wrapperProps
-}: RowWithButtonProps) {
-  const Label = label({ variant: 'body', className: 'layout-label' });
-  const Description =
-    isDefined(description) &&
-    description({ variant: 'subheadline', className: 'layout-description' });
-  const Button = button();
-
-  return (
-    <LayoutWrapper direction='column' {...wrapperProps}>
-      <StyledFlexRow>
-        {Label}
-        {Button}
-      </StyledFlexRow>
-      {Description}
-    </LayoutWrapper>
-  );
+type RowWithButtonProps = BaseLayoutProps;
+export function RowWithButton({ ...baseRowProps }: RowWithButtonProps) {
+  return <BaseLayoutRow {...baseRowProps} actionPosition='right' />;
 }
 
-type RowWithRadioButtonProps = {
-  radioButton: RenderSlot;
-} & BaseRowProps;
+type RowWithRadioButtonProps = BaseLayoutProps;
 export function RowWithRadiobutton({
-  label,
-  description,
-  radioButton,
-  ...wrapperProps
+  ...baseRowProps
 }: RowWithRadioButtonProps) {
-  const Label = label({ variant: 'body', className: 'layout-label' });
-  const Description =
-    isDefined(description) &&
-    description({ variant: 'subheadline', className: 'layout-description' });
-  const RadioButton = radioButton();
-
-  return (
-    <LayoutWrapper direction='row' {...wrapperProps}>
-      {RadioButton}
-      <StyledFlexColumn>
-        {Label}
-        {Description}
-      </StyledFlexColumn>
-    </LayoutWrapper>
-  );
+  return <BaseLayoutRow {...baseRowProps} actionPosition='left' />;
 }
 
-type RowWithCheckboxProps = {
-  checkbox: RenderSlot;
-} & BaseRowProps;
-export function RowWithCheckbox({
-  label,
-  description,
-  checkbox,
-  ...wrapperProps
-}: RowWithCheckboxProps) {
-  const Label = label({ variant: 'body', className: 'layout-label' });
-  const Description =
-    isDefined(description) &&
-    description({ variant: 'subheadline', className: 'layout-description' });
-  const Checkbox = checkbox();
-
-  return (
-    <LayoutWrapper direction='row' {...wrapperProps}>
-      {Checkbox}
-      <StyledFlexColumn>
-        {Label}
-        {Description}
-      </StyledFlexColumn>
-    </LayoutWrapper>
-  );
+type RowWithCheckboxProps = BaseLayoutProps;
+export function RowWithCheckbox({ ...baseRowProps }: RowWithCheckboxProps) {
+  return <BaseLayoutRow {...baseRowProps} actionPosition='left' />;
 }
 
-type RowWithSwitchProps = {
-  switch: RenderSlot;
-} & BaseRowProps;
-
-export function RowWithSwitch({
-  label,
-  switch: switchRenderFunc,
-  description,
-  ...wrapperProps
-}: RowWithSwitchProps) {
-  const Label = label({ variant: 'body', className: 'layout-label' });
-  const Description =
-    isDefined(description) &&
-    description({ variant: 'subheadline', className: 'layout-description' });
-  const Switch = switchRenderFunc();
-
-  return (
-    <LayoutWrapper direction='column' {...wrapperProps}>
-      <StyledFlexRow>
-        {Label}
-        {Switch}
-      </StyledFlexRow>
-      {Description}
-    </LayoutWrapper>
-  );
+type RowWithSwitchProps = BaseLayoutProps;
+export function RowWithSwitch({ ...baseRowProps }: RowWithSwitchProps) {
+  return <BaseLayoutRow {...baseRowProps} actionPosition='right' />;
 }
 
-type RowWithTextFieldProps = {
-  textField: RenderSlot<{ className?: string }>;
-  instruction?: RenderSlot<LabelProps>;
-} & BaseRowProps;
-
-export function RowWithTextField({
-  label,
-  textField,
-  description,
-  instruction,
-  ...wrapperProps
-}: RowWithTextFieldProps) {
-  const Label = label({ variant: 'body', className: 'layout-label' });
-  const Description =
-    isDefined(description) &&
-    description({ variant: 'subheadline', className: 'layout-description' });
-  const Instruction =
-    isDefined(instruction) &&
-    instruction({ variant: 'subheadline', className: 'layout-instruction' });
-
-  const TextField = textField({ className: 'layout-text-field' });
-
-  return (
-    <LayoutWrapper direction='column' {...wrapperProps}>
-      <StyledFlexRow>
-        {Label}
-        {TextField}
-      </StyledFlexRow>
-      {Instruction}
-      {Description}
-    </LayoutWrapper>
-  );
+type RowWithTextFieldProps = BaseLayoutProps;
+export function RowWithTextField({ ...baseRowProps }: RowWithTextFieldProps) {
+  return <BaseLayoutRow {...baseRowProps} actionPosition='right' actionFlex />;
 }
 
-type RowWithProgressBarProps = {
-  progressBar: RenderSlot<{ className: string }>;
-  slot?: RenderSlot<{ className: string }>;
-} & BaseRowProps;
+type RowWithProgressBarProps = BaseLayoutColumnProps;
 export function RowWithProgressBar({
-  label,
-  description,
-  progressBar,
-  slot,
-  ...wrapperProps
+  ...baseColumnProps
 }: RowWithProgressBarProps) {
-  const Label = label({ variant: 'body', className: 'layout-label' });
-  const Description =
-    isDefined(description) &&
-    description({ variant: 'subheadline', className: 'layout-description' });
-
-  const ProgressBar = progressBar({ className: 'layout-progress-bar' });
-  const Slot = isDefined(slot) && slot({ className: 'layout-slot' });
-
-  return (
-    <LayoutWrapper direction='column' {...wrapperProps}>
-      {Label}
-      <StyledFlexRow>
-        {ProgressBar}
-        {Slot}
-      </StyledFlexRow>
-      {Description}
-    </LayoutWrapper>
-  );
+  return <BaseLayoutColumn {...baseColumnProps} />;
 }
 
-type ColumnWithTextFieldProps = {
-  textField: RenderSlot<{ className?: string }>;
-  instruction?: RenderSlot<LabelProps>;
-  suffix?: RenderSlot<LabelProps>;
-} & BaseRowProps;
+type ColumnWithTextFieldProps = BaseLayoutColumnProps;
 export function ColumnWithTextField({
-  label,
-  description,
-  instruction,
-  suffix,
-  textField,
+  ...baseColumnProps
 }: ColumnWithTextFieldProps) {
-  const Label = label({ variant: 'body', className: 'layout-label' });
-
-  const Description =
-    isDefined(description) &&
-    description({ variant: 'subheadline', className: 'layout-description' });
-
-  const Suffix =
-    isDefined(suffix) &&
-    suffix({ variant: 'subheadline', className: 'layout-suffix' });
-
-  const Instruction =
-    isDefined(instruction) &&
-    instruction({ variant: 'subheadline', className: 'layout-instruction' });
-
-  const TextField = textField({ className: 'layout-text-field' });
-
-  return (
-    <LayoutWrapper direction='column'>
-      <StyledFlexRow>
-        {Label}
-        {Suffix}
-      </StyledFlexRow>
-      {TextField}
-      {Instruction}
-      {Description}
-    </LayoutWrapper>
-  );
+  return <BaseLayoutColumn {...baseColumnProps} />;
 }
 
-type RowWithSelectProps = {
-  select: RenderSlot<{ className?: string }>;
-} & BaseRowProps;
-
-export function RowWithSelect({
-  label,
-  select,
-  description,
-  ...wrapperProps
-}: RowWithSelectProps) {
-  const Label = label({ variant: 'body', className: 'layout-label' });
-  const Description =
-    isDefined(description) &&
-    description({ variant: 'subheadline', className: 'layout-description' });
-
-  const Select = select({ className: 'layout-select-field' });
-
-  return (
-    <LayoutWrapper direction='column' {...wrapperProps}>
-      <StyledFlexRow>
-        {Label}
-        {Select}
-      </StyledFlexRow>
-      {Description}
-    </LayoutWrapper>
-  );
+type RowWithSelectProps = BaseLayoutProps;
+export function RowWithSelect({ ...baseRowProps }: RowWithSelectProps) {
+  return <BaseLayoutRow {...baseRowProps} actionPosition='right' actionFlex />;
 }

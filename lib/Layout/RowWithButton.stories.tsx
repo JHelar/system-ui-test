@@ -8,7 +8,7 @@ export default {
   component: RowWithButton,
   args: {
     label: (props) => <Label {...props}>Label</Label>,
-    button: () => <Button>Action</Button>,
+    action: () => <Button>Action</Button>,
     description: (props) => <Label {...props}>Description</Label>,
   },
 } satisfies Meta<typeof RowWithButton>;

@@ -8,7 +8,7 @@ export default {
   component: RowWithSwitch,
   args: {
     label: (props) => <Label {...props}>Label</Label>,
-    switch: () => <Switch />,
+    action: (props) => <Switch {...props} />,
     description: (props) => <Label {...props}>Description</Label>,
   },
 } satisfies Meta<typeof RowWithSwitch>;
