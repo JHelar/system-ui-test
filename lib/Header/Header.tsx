@@ -1,8 +1,8 @@
 import { PropsWithChildren } from 'react';
-import { Label, LabelProps } from '../Label';
+import { LabelProps } from '../Label';
 import { RenderSlot, PolymorphicComponentProps } from '../types';
 import { isDefined } from '../utils/isDefined';
-import { HeaderWrapper } from './Header.styles';
+import { HeaderWrapper, StyledLabel } from './Header.styles';
 
 type HeaderProps = {
   slot?: RenderSlot;
@@ -19,7 +19,7 @@ export function Header<AsTarget extends React.ElementType>({
 
   return (
     <HeaderWrapper className={className}>
-      <Label {...(labelProps as LabelProps)}>{children}</Label>
+      <StyledLabel {...(labelProps as LabelProps)}>{children}</StyledLabel>
       {Slot}
     </HeaderWrapper>
   );

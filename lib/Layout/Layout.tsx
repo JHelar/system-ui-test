@@ -1,10 +1,14 @@
 import { RenderSlot } from '../types';
-import { isDefined } from '../utils/isDefined';
-import { LabelProps } from '../Label';
-import { StyledFlexRow, LayoutWrapper } from './BaseLayout.styles';
 import { BaseLayoutProps } from './BaseLayout';
 import { BaseLayoutRow } from './BaseLayoutRow';
 import { BaseLayoutColumn, BaseLayoutColumnProps } from './BaseLayoutColumn';
+import {
+  ContentWrapper,
+  ContentWrapperProps,
+  LayoutWrapper,
+} from './Layout.styles';
+import { PropsWithChildren } from 'react';
+import { isDefined } from '../utils/isDefined';
 
 type RowWithButtonProps = BaseLayoutProps;
 export function RowWithButton({ ...baseRowProps }: RowWithButtonProps) {
@@ -50,4 +54,32 @@ export function ColumnWithTextField({
 type RowWithSelectProps = BaseLayoutProps;
 export function RowWithSelect({ ...baseRowProps }: RowWithSelectProps) {
   return <BaseLayoutRow {...baseRowProps} actionPosition='right' actionFlex />;
+}
+
+type LayoutProps = PropsWithChildren<{
+  sidebar?: RenderSlot;
+  alignItems: ContentWrapperProps['$alignItems'];
+  justifyContent: ContentWrapperProps['$justifyContent'];
+}>;
+export function Layout({
+  sidebar,
+  alignItems,
+  justifyContent,
+  children,
+}: LayoutProps) {
+  const Sidebar = isDefined(sidebar) && sidebar();
+  const fullWidth = !isDefined(sidebar);
+
+  return (
+    <LayoutWrapper>
+      {Sidebar}
+      <ContentWrapper
+        $alignItems={alignItems}
+        $justifyContent={justifyContent}
+        $fullWidth={fullWidth}
+      >
+        {children}
+      </ContentWrapper>
+    </LayoutWrapper>
+  );
 }

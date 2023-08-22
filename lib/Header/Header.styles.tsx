@@ -1,9 +1,10 @@
 import styled from 'styled-components';
+import { Label } from '../Label';
 
 export const HeaderWrapper = styled.div`
   display: flex;
+`;
 
-  > :first-child {
-    flex: 1 1 auto;
-  }
+export const StyledLabel = styled(Label)`
+  flex: 1 1 auto;
 `;

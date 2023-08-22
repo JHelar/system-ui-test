@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const StyledWrapper = styled.div`
+export const StyledWrapper = styled.aside`
   padding: ${({ theme }) => theme.spacing.medium};
   display: flex;
   flex-direction: column;
@@ -8,6 +8,7 @@ export const StyledWrapper = styled.div`
   align-items: flex-start;
   background-color: ${({ theme }) => theme.colors.base.background.subtle};
   border-right: 1px solid ${({ theme }) => theme.colors.base.border.subtle};
+  height: 100%;
 `;
 
 export const StyledItemWrapper = styled.div`
@@ -15,4 +16,10 @@ export const StyledItemWrapper = styled.div`
   width: 100%;
   display: flex;
   flex-flow: column;
+`;
+
+export const BottomRowWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 `;

@@ -1,7 +1,11 @@
 import { PropsWithChildren } from 'react';
 import { PolymorphicComponentProps, RenderSlot } from '../types';
 import { isDefined } from '../utils/isDefined';
-import { StyledItemWrapper, StyledWrapper } from './Sidebar.styles';
+import {
+  BottomRowWrapper,
+  StyledItemWrapper,
+  StyledWrapper,
+} from './Sidebar.styles';
 import { Separator } from '../Separator';
 
 type SidebarProps = PropsWithChildren<{
@@ -34,14 +38,14 @@ export function Sidebar({
     </>
   );
 
-  const BottomRow = isDefined(bottomRow) && bottomRow();
-
-  const BottomLabel = isDefined(bottomLabel) && (
+  const BottomRow = isDefined(bottomRow) && (
     <>
-      {bottomLabel()}
+      <BottomRowWrapper>{bottomRow()}</BottomRowWrapper>
       <Separator variant='empty' height='thin' />
     </>
   );
+
+  const BottomLabel = isDefined(bottomLabel) && bottomLabel();
 
   return (
     <StyledWrapper {...wrapperProps}>

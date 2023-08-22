@@ -29,6 +29,8 @@ export const BaseItem = styled.button`
   align-items: center;
   border-radius: ${({ theme }) => theme.radius.medium};
 
+  cursor: pointer;
+
   .sidebar-item-icon--leading {
     color: var(
       --text-color,
