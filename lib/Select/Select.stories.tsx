@@ -1,6 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react';
 import { Select } from './Select';
 import { SelectItem } from './SelectItem';
+import { Separator } from '../Separator';
 
 export default {
   title: 'Components / Input / Select',
@@ -15,6 +16,7 @@ export const Default: Story = {
       <SelectItem value='apple'>Apple</SelectItem>
       <SelectItem value='banana'>Banana</SelectItem>
       <SelectItem value='blueberry'>Blueberry</SelectItem>
+      <Separator />
       <SelectItem value='grapes'>Grapes</SelectItem>
       <SelectItem value='pineapple'>Pineapple</SelectItem>
     </Select>
