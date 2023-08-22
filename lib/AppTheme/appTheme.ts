@@ -294,7 +294,7 @@ export const appTheme = {
     xLarge: '16px',
     xxLarge: '24px',
     '3xLarge': '32px',
-    '4xLarge': '48px',
+    '4xLarge': '40px',
     '5xLarge': '64px',
   },
   radius: {

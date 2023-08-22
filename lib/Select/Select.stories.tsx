@@ -1,5 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { Select, SelectItem } from './Select';
+import { Select } from './Select';
+import { SelectItem } from './SelectItem';
 
 export default {
   title: 'Components / Input / Select',

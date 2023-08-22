@@ -3,6 +3,7 @@ import React, { PropsWithChildren } from 'react';
 import * as RadixSelect from '@radix-ui/react-select';
 import { Icon } from '../Icon';
 import { StyledSelectIcon, StyledSelectTrigger } from './Select.styles';
+import { SelectMenu } from './SelectMenu';
 
 type SelectProps = PropsWithChildren<RadixSelect.SelectProps> & {
   placeholder?: string;
@@ -25,28 +26,8 @@ export function Select({
         </StyledSelectIcon>
       </StyledSelectTrigger>
       <RadixSelect.Portal>
-        <RadixSelect.Content>
-          <RadixSelect.ScrollUpButton>
-            <Icon name='expand_less' />
-          </RadixSelect.ScrollUpButton>
-          <RadixSelect.Viewport>{children}</RadixSelect.Viewport>
-          <RadixSelect.ScrollDownButton>
-            <Icon name='expand_more' />
-          </RadixSelect.ScrollDownButton>
-        </RadixSelect.Content>
+        <SelectMenu position='popper'>{children}</SelectMenu>
       </RadixSelect.Portal>
     </RadixSelect.Root>
-  );
-}
-
-type SelectItemProps = PropsWithChildren<RadixSelect.SelectItemProps>;
-export function SelectItem({ children, ...selectItemProps }: SelectItemProps) {
-  return (
-    <RadixSelect.Item {...selectItemProps}>
-      <RadixSelect.ItemText>{children}</RadixSelect.ItemText>
-      <RadixSelect.ItemIndicator>
-        <Icon name='check' />
-      </RadixSelect.ItemIndicator>
-    </RadixSelect.Item>
   );
 }
