@@ -7,6 +7,8 @@ type ButtonProps = {
   /** Set if the button is in a loading state */
   loading?: boolean;
 
+  disabled?: boolean;
+
   className?: string;
 };
 

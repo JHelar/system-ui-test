@@ -1,0 +1,22 @@
+import { css, styled } from 'styled-components';
+
+const variants = {
+  button: css``,
+  extended: css`
+    width: 100%;
+    min-width: ${({ theme }) => theme.size.xxSmall};
+  `,
+  normal: css`
+    min-width: ${({ theme }) => theme.size.xxSmall};
+    max-width: ${({ theme }) => theme.size.xSmall};
+  `,
+};
+
+export type TableCellVariant = keyof typeof variants;
+type BaseTableCellProps = {
+  $variant: TableCellVariant;
+};
+export const BaseTableCell = styled.td<BaseTableCellProps>`
+  border-collapse: collapse;
+  ${({ $variant }) => variants[$variant]}
+`;

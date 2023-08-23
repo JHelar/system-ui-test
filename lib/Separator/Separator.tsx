@@ -1,3 +1,4 @@
+import { PolymorphicComponentProps } from '../types';
 import {
   BaseSeparator,
   SeparatorHeight,
@@ -9,9 +10,12 @@ type SeparatorProps = {
   variant?: SeparatorVariant;
 };
 
-export function Separator({
+export function Separator<AsProp extends React.ElementType>({
   height = 'tall',
   variant = 'centered',
-}: SeparatorProps) {
-  return <BaseSeparator $height={height} $variant={variant} />;
+  ...separatorProps
+}: PolymorphicComponentProps<AsProp, SeparatorProps>) {
+  return (
+    <BaseSeparator {...separatorProps} $height={height} $variant={variant} />
+  );
 }

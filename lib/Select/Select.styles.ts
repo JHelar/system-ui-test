@@ -9,6 +9,7 @@ export const StyledSelectTrigger = styled(RadixSelect.Trigger)`
   all: unset;
 
   min-width: 128px;
+  width: 100%;
   margin: ${({ theme }) => theme.spacing.xxSmall} 0px;
   padding: ${({ theme }) => `${theme.spacing.xxSmall} ${theme.spacing.medium}`};
 
