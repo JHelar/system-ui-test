@@ -4,6 +4,7 @@ import { Label } from '../Label';
 import { SidebarItem } from './SidebarItem';
 import { Icon } from '../Icon';
 import { Separator } from '../Separator';
+import { Color } from '../Color';
 
 export default {
   title: 'Components / Sidebar',
@@ -16,7 +17,9 @@ type Story = StoryObj<typeof Sidebar>;
 export const Default: Story = {
   render: (props) => (
     <Sidebar {...props}>
-      <Label variant='subheadline'>Favourites</Label>
+      <Color colorCategory='base' colorVariant='text' colorName='lowContrast'>
+        <Label variant='subheadline'>Favourites</Label>
+      </Color>
       <SidebarItem leadingIcon={(props) => <Icon {...props} name='history' />}>
         Recents
       </SidebarItem>
@@ -33,7 +36,9 @@ export const Default: Story = {
         Downloads
       </SidebarItem>
       <Separator variant='empty' height='thin' />
-      <Label variant='subheadline'>Location</Label>
+      <Color colorCategory='base' colorVariant='text' colorName='lowContrast'>
+        <Label variant='subheadline'>Location</Label>
+      </Color>
       <SidebarItem
         leadingIcon={(props) => <Icon {...props} name='hard_drive' />}
       >
