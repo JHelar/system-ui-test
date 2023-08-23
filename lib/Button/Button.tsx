@@ -1,5 +1,6 @@
+import { ProgressCircle } from '../ProgressCircle';
 import { PolymorphicComponentProps } from '../types';
-import { BaseButton, ButtonVariant, SpinnerIcon } from './Button.styles';
+import { BaseButton, ButtonVariant } from './Button.styles';
 
 type ButtonProps = {
   /** Variant of button to render */
@@ -19,7 +20,7 @@ export function Button<AsTarget extends React.ElementType>({
   ...buttonProps
 }: PolymorphicComponentProps<AsTarget, ButtonProps>) {
   const LoadingIcon = loading && (
-    <SpinnerIcon name='intermediate_progress_circle' />
+    <ProgressCircle variant='intermediate_progress_circle' />
   );
   return (
     <BaseButton {...buttonProps} $variant={variant} $loading={loading}>
