@@ -11,12 +11,12 @@ const sizes = {
     height: ${({ theme }) => theme.spacing['3xLarge']};
   `,
   large: css`
-    width: 48px;
-    height: 48px;
-  `,
-  xLarge: css`
     width: ${({ theme }) => theme.spacing['5xLarge']};
     height: ${({ theme }) => theme.spacing['5xLarge']};
+  `,
+  xLarge: css`
+    width: ${({ theme }) => theme.spacing['6xLarge']};
+    height: ${({ theme }) => theme.spacing['6xLarge']};
   `,
 };
 

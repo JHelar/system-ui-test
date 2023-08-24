@@ -295,7 +295,8 @@ export const appTheme = {
     xxLarge: '24px',
     '3xLarge': '32px',
     '4xLarge': '40px',
-    '5xLarge': '64px',
+    '5xLarge': '48px',
+    '6xLarge': '64px',
   },
   radius: {
     xxSmall: '2px',
