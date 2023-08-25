@@ -9,7 +9,9 @@
     "lint": "next lint",
     "format": "prettier --write .",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "storybook:clean": "rm -rf ./storybook-static",
+    "storybook:build": "storybook build",
+    "storybook:deploy": "yarn storybook:build && touch storybook-static/.nojekyll && rm storybook-static/.gitignore && yarn gh-pages -t -d storybook-static && yarn storybook:clean"
   },
   "dependencies": {
     "@radix-ui/react-checkbox": "^1.0.4",
@@ -43,6 +45,7 @@
     "copy-webpack-plugin": "^11.0.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-storybook": "^0.6.13",
+    "gh-pages": "^6.0.0",
     "prettier": "^3.0.1",
     "storybook": "^7.3.0"
   }
