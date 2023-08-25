@@ -2,6 +2,8 @@ import { ReactElement, cloneElement, isValidElement } from 'react';
 import { RenderSlot } from '../types';
 import { isDefined } from '../utils/isDefined';
 import {
+  RowContainer,
+  RowVariant,
   RowWrapper,
   StyledDescription,
   StyledDescriptionSuffix,
@@ -11,16 +13,18 @@ import {
   StyledTitleSuffix,
   TextContent,
 } from './Row.styles';
+import { renderSlotWith } from '../utils/renderSlot';
 
 type RowProps = {
+  variant?: RowVariant;
   leadingIcon?: RenderSlot;
   thumbnail?: RenderSlot;
-  preTitle?: string;
-  title?: string;
-  titleSuffix?: string;
-  description?: string;
-  descriptionSuffix?: string;
-  footnote?: string;
+  preTitle?: RenderSlot;
+  title?: RenderSlot;
+  titleSuffix?: RenderSlot;
+  description?: RenderSlot;
+  descriptionSuffix?: RenderSlot;
+  footnote?: RenderSlot;
   trailingIcon?: RenderSlot;
   className?: string;
 };
@@ -40,63 +44,57 @@ export function Row({
   descriptionSuffix,
   footnote,
   trailingIcon,
+  variant = 'default',
   ...wrapperProps
 }: RowProps) {
-  const Title = isDefined(title) && <StyledTitle>{title}</StyledTitle>;
+  const Title = isDefined(title) && <StyledTitle>{title()}</StyledTitle>;
   const PreTitle = isDefined(preTitle) && (
-    <StyledPreTitle>{preTitle}</StyledPreTitle>
+    <StyledPreTitle>{preTitle()}</StyledPreTitle>
   );
   const TitleSuffix = isDefined(titleSuffix) && (
-    <StyledTitleSuffix>{titleSuffix}</StyledTitleSuffix>
+    <StyledTitleSuffix>{titleSuffix()}</StyledTitleSuffix>
   );
   const Description = isDefined(description) && (
-    <StyledDescription>{description}</StyledDescription>
+    <StyledDescription>{description()}</StyledDescription>
   );
   const DescriptionSuffix = isDefined(descriptionSuffix) && (
-    <StyledDescriptionSuffix>{descriptionSuffix}</StyledDescriptionSuffix>
+    <StyledDescriptionSuffix>{descriptionSuffix()}</StyledDescriptionSuffix>
   );
   const Footnote = isDefined(footnote) && (
-    <StyledFootnote>{footnote}</StyledFootnote>
+    <StyledFootnote>{footnote()}</StyledFootnote>
   );
 
-  const LeadingIcon =
-    isDefined(leadingIcon) &&
-    isValidElement(leadingIcon()) &&
-    cloneElement(leadingIcon() as ReactElement, {
-      style: { gridArea: 'leading-icon' },
-    });
+  const LeadingIcon = renderSlotWith(leadingIcon, {
+    style: { gridArea: 'leading-icon' },
+  });
 
-  const TrailingIcon =
-    isDefined(trailingIcon) &&
-    isValidElement(trailingIcon()) &&
-    cloneElement(trailingIcon() as ReactElement, {
-      style: { gridArea: 'trailing-icon' },
-    });
+  const TrailingIcon = renderSlotWith(trailingIcon, {
+    style: { gridArea: 'trailing-icon' },
+  });
 
-  const Thumbnail =
-    isDefined(thumbnail) &&
-    isValidElement(thumbnail()) &&
-    cloneElement(thumbnail() as ReactElement, {
-      style: { gridArea: 'thumbnail' },
-    });
+  const Thumbnail = renderSlotWith(thumbnail, {
+    style: { gridArea: 'thumbnail' },
+  });
 
   return (
-    <RowWrapper {...wrapperProps}>
-      {LeadingIcon}
-      {Thumbnail}
-      <TextContent>
-        {PreTitle}
-        <RowWrapper>
-          {Title}
-          {TitleSuffix}
-        </RowWrapper>
-        <RowWrapper>
-          {Description}
-          {DescriptionSuffix}
-        </RowWrapper>
-        {Footnote}
-      </TextContent>
-      {TrailingIcon}
-    </RowWrapper>
+    <RowContainer $variant={variant} {...wrapperProps}>
+      <RowWrapper>
+        {LeadingIcon}
+        {Thumbnail}
+        <TextContent>
+          {PreTitle}
+          <RowWrapper>
+            {Title}
+            {TitleSuffix}
+          </RowWrapper>
+          <RowWrapper>
+            {Description}
+            {DescriptionSuffix}
+          </RowWrapper>
+          {Footnote}
+        </TextContent>
+        {TrailingIcon}
+      </RowWrapper>
+    </RowContainer>
   );
 }

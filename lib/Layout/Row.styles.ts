@@ -1,4 +1,29 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+
+const variants = {
+  default: css``,
+  focused: css`
+    outline: 2px solid ${({ theme }) => theme.colors.accent.border.normal};
+    outline-width: -2px;
+  `,
+  disabled: css`
+    opacity: 0.3;
+  `,
+};
+
+export type RowVariant = keyof typeof variants;
+type RowContainerProps = {
+  $variant: RowVariant;
+};
+
+export const RowContainer = styled.div<RowContainerProps>`
+  display: inline-block;
+  margin: ${({ theme }) => theme.spacing.xxSmall} 0px;
+  padding: ${({ theme }) => theme.spacing.medium};
+  border-radius: ${({ theme }) => theme.spacing.medium};
+
+  ${({ $variant }) => variants[$variant]}
+`;
 
 export const RowWrapper = styled.div`
   display: flex;
