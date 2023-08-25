@@ -291,6 +291,7 @@ export const appTheme = {
     xSmall: '4px',
     small: '6px',
     medium: '8px',
+    large: '12px',
     xLarge: '16px',
     xxLarge: '24px',
     '3xLarge': '32px',
