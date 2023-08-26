@@ -5,6 +5,10 @@ import { ThemeProvider, createGlobalStyle } from 'styled-components';
 import { appTheme, primitives } from './appTheme';
 
 const GlobalStyle = createGlobalStyle`
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+
   html {
     font-family: ${primitives.typography.textFont};
     font-size: 100%;
