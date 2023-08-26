@@ -3,7 +3,7 @@ import { css, styled } from 'styled-components';
 
 export const TooltipContent = styled(RadixTooltip.Content)`
   display: inline-flex;
-  padding: 0px ${({ theme }) => theme.spacing.medium};
+  padding: ${({ theme }) => `${theme.spacing.xSmall} ${theme.spacing.medium}`};
   flex-direction: column;
   justify-content: center;
   align-items: center;
