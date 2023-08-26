@@ -1,6 +1,6 @@
 import { css, styled } from 'styled-components';
 
-const baseStyles = css`
+export const baseStyles = css`
   --border-color: ${({ theme }) => theme.colors.base.border.normal};
 
   display: flex;
@@ -11,7 +11,7 @@ const baseStyles = css`
   background-color: ${({ theme }) => theme.colors.base.background.normal};
 
   color: ${({ theme }) => theme.colors.base.text.highContrast};
-  ${({ theme }) => css(theme.text.regular.body)};
+  ${({ theme }) => theme.text.regular.body};
 
   &::placeholder {
     color: ${({ theme }) => theme.colors.base.text.lowContrast};

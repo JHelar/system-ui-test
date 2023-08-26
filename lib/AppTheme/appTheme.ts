@@ -1,7 +1,8 @@
-import { interFont, materialIconsFont } from './appThemeFont';
+import { interFont, materialIconsFont, robotoFont } from './appThemeFont';
 
 export const primitives = {
   typography: {
+    monoFont: robotoFont.style.fontFamily,
     textFont: interFont.style.fontFamily,
     iconFont: materialIconsFont.style.fontFamily,
   },
@@ -9,6 +10,16 @@ export const primitives = {
 
 export const appTheme = {
   text: {
+    mono: {
+      snippet: {
+        fontFamily: primitives.typography.monoFont,
+        fontSize: '16px',
+        fontStyle: 'normal',
+        fontWeight: 400,
+        lineHeight: '24px',
+        letterSpacing: '-0.176px',
+      },
+    },
     regular: {
       largeTitle: {
         fontFamily: primitives.typography.textFont,

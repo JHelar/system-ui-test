@@ -7,7 +7,11 @@ import { ComponentProps, SVGProps } from 'react';
 import { DeterminateProgressCircle } from './DeterminateProgressCircle';
 import { IntermediateProgressCircle } from './IntermediateProgressCircle';
 
-const BaseIcon = styled.i`
+type BaseIconProps = {
+  $fill: boolean;
+};
+
+const BaseIcon = styled.i<BaseIconProps>`
   font-family: ${primitives.typography.iconFont};
   font-weight: normal;
   font-style: normal;
@@ -23,6 +27,7 @@ const BaseIcon = styled.i`
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   font-feature-settings: 'liga';
+  font-variation-settings: 'FILL' ${({ $fill }) => ($fill ? 1 : 0)};
 `;
 
 export type IconProps = {
@@ -33,10 +38,11 @@ export type IconProps = {
     | MaterialSymbol
     | 'determinate_progress_circle'
     | 'intermediate_progress_circle';
+  fill?: boolean;
   className?: string;
 };
 
-export function Icon({ name, ...iconProps }: IconProps) {
+export function Icon({ name, fill = false, ...iconProps }: IconProps) {
   if (name === 'determinate_progress_circle') {
     return (
       <DeterminateProgressCircle {...(iconProps as SVGProps<SVGSVGElement>)} />
@@ -48,7 +54,7 @@ export function Icon({ name, ...iconProps }: IconProps) {
     );
   }
   return (
-    <BaseIcon {...(iconProps as ComponentProps<typeof BaseIcon>)}>
+    <BaseIcon {...(iconProps as ComponentProps<typeof BaseIcon>)} $fill={fill}>
       {name}
     </BaseIcon>
   );
