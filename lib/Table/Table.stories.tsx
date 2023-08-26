@@ -81,7 +81,12 @@ export default {
           <Checkbox />
         </TableCell>
         <TableCell variant='extended'>
-          <Label>Label</Label>
+          <Label>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est
+            numquam at accusantium quis. Corrupti cum, alias magnam placeat
+            dolorem nemo officia ipsam vel veritatis inventore itaque
+            repellendus suscipit laborum error.
+          </Label>
         </TableCell>
         <TableCell>
           <Label>Label</Label>

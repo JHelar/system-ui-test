@@ -5,6 +5,7 @@ const variants = {
   extended: css`
     width: 100%;
     min-width: ${({ theme }) => theme.size.xxSmall};
+    max-width: ${({ theme }) => theme.size.medium};
   `,
   normal: css`
     min-width: ${({ theme }) => theme.size.xxSmall};
@@ -18,5 +19,8 @@ type BaseTableCellProps = {
 };
 export const BaseTableCell = styled.td<BaseTableCellProps>`
   border-collapse: collapse;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   ${({ $variant }) => variants[$variant]}
 `;
