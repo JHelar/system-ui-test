@@ -1,6 +1,6 @@
 import * as RadixToast from '@radix-ui/react-toast';
 import { RenderSlot } from '../types';
-import { renderSlotWith } from '../utils/renderSlot';
+import { renderSlotWith } from '../utils/renderSlotWith';
 import { isDefined } from '../utils/isDefined';
 import {
   ToastAction,

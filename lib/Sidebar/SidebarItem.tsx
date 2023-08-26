@@ -2,7 +2,7 @@ import { PropsWithChildren } from 'react';
 import { PolymorphicComponentProps, RenderSlot } from '../types';
 import { isDefined } from '../utils/isDefined';
 import { BaseItem, StyledLabel, StyledSuffix } from './SidebarItem.styles';
-import { renderSlotWith } from '../utils/renderSlot';
+import { renderSlotWith } from '../utils/renderSlotWith';
 
 type SidebarItemProps = PropsWithChildren<{
   selected?: boolean;

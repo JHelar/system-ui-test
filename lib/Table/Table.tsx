@@ -12,7 +12,7 @@ import {
 import { isDefined } from '../utils/isDefined';
 import { LabelProps } from '../Label';
 import { Separator } from '../Separator';
-import { renderSlotWith } from '../utils/renderSlot';
+import { renderSlotWith } from '../utils/renderSlotWith';
 
 type TableProps = PropsWithChildren<{
   title?: RenderSlot;

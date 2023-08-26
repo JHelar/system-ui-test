@@ -1,4 +1,4 @@
-import { renderSlotWith } from '../utils/renderSlot';
+import { renderSlotWith } from '../utils/renderSlotWith';
 import type { BaseLayoutProps } from './BaseLayout';
 import {
   LayoutWrapper,

@@ -13,7 +13,7 @@ import {
   StyledTitleSuffix,
   TextContent,
 } from './Row.styles';
-import { renderSlotWith } from '../utils/renderSlot';
+import { renderSlotWith } from '../utils/renderSlotWith';
 
 type RowProps = {
   variant?: RowVariant;
