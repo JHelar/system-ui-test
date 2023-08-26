@@ -7,9 +7,9 @@ export default {
   title: 'Components / Layout / RowWithButton',
   component: RowWithButton,
   args: {
-    label: (props) => <Label {...props}>Label</Label>,
+    label: () => <Label>Label</Label>,
     action: () => <Button>Action</Button>,
-    description: (props) => <Label {...props}>Description</Label>,
+    description: () => <Label>Description</Label>,
   },
 } satisfies Meta<typeof RowWithButton>;
 

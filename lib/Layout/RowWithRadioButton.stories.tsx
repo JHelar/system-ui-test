@@ -7,16 +7,15 @@ export default {
   title: 'Components / Layout / RowWithRadioButton',
   component: RowWithRadiobutton,
   args: {
-    label: (props) => <Label {...props}>Label</Label>,
-    action: (props) => <RadioButton {...props} value='storybook' />,
-    description: (props) => <Label {...props}>Description</Label>,
+    label: () => <Label>Label</Label>,
+    action: () => <RadioButton value='storybook' />,
+    description: () => <Label>Description</Label>,
   },
-} satisfies Meta<typeof RowWithRadiobutton>;
-
-export const Default: StoryObj<typeof RowWithRadiobutton> = {
   render: (props) => (
     <RadioButtonGroup>
       <RowWithRadiobutton {...props} />
     </RadioButtonGroup>
   ),
-};
+} satisfies Meta<typeof RowWithRadiobutton>;
+
+export const Default: StoryObj<typeof RowWithRadiobutton> = {};

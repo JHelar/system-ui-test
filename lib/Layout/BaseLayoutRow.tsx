@@ -1,4 +1,4 @@
-import { isDefined } from '../utils/isDefined';
+import { renderSlotWith } from '../utils/renderSlot';
 import type { BaseLayoutProps } from './BaseLayout';
 import {
   LayoutWrapper,
@@ -20,21 +20,24 @@ export function BaseLayoutRow({
   actionFlex = false,
   ...wrapperProps
 }: BaseLayoutRowProps) {
-  const Label = label({ variant: 'body', className: 'layout-label' });
+  const Label = renderSlotWith(label, {
+    variant: 'body',
+    className: 'layout-label',
+  });
 
-  const Description =
-    isDefined(description) &&
-    description({ variant: 'subheadline', className: 'layout-description' });
+  const Description = renderSlotWith(description, {
+    variant: 'subheadline',
+    className: 'layout-description',
+  });
 
-  const Instruction =
-    isDefined(instruction) &&
-    instruction({ variant: 'subheadline', className: 'layout-instruction' });
+  const Instruction = renderSlotWith(instruction, {
+    variant: 'subheadline',
+    className: 'layout-instruction',
+  });
 
-  const Action =
-    isDefined(action) &&
-    action({
-      className: `layout-action${actionFlex ? ' layout-action--flex' : ''}`,
-    });
+  const Action = renderSlotWith(action, {
+    className: `layout-action${actionFlex ? ' layout-action--flex' : ''}`,
+  });
 
   if (actionPosition === 'left') {
     return (

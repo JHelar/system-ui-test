@@ -1,12 +1,11 @@
-import { LabelProps } from '../Label';
 import { RenderSlot } from '../types';
-import { isDefined } from '../utils/isDefined';
+import { renderSlotWith } from '../utils/renderSlot';
 import type { BaseLayoutProps } from './BaseLayout';
 import { LayoutWrapper, StyledFlexRow } from './BaseLayout.styles';
 
 export type BaseLayoutColumnProps = BaseLayoutProps & {
-  actionSlot?: RenderSlot<{ className: string }>;
-  suffix?: RenderSlot<LabelProps>;
+  actionSlot?: RenderSlot;
+  suffix?: RenderSlot;
 };
 
 export function BaseLayoutColumn({
@@ -18,31 +17,33 @@ export function BaseLayoutColumn({
   suffix,
   ...wrapperProps
 }: BaseLayoutColumnProps) {
-  const Label = label({ variant: 'body', className: 'layout-label' });
+  const Label = renderSlotWith(label, {
+    variant: 'body',
+    className: 'layout-label',
+  });
 
-  const Description =
-    isDefined(description) &&
-    description({ variant: 'subheadline', className: 'layout-description' });
+  const Description = renderSlotWith(description, {
+    variant: 'subheadline',
+    className: 'layout-description',
+  });
 
-  const Suffix =
-    isDefined(suffix) &&
-    suffix({ variant: 'subheadline', className: 'layout-suffix' });
+  const Suffix = renderSlotWith(suffix, {
+    variant: 'subheadline',
+    className: 'layout-suffix',
+  });
 
-  const Instruction =
-    isDefined(instruction) &&
-    instruction({ variant: 'subheadline', className: 'layout-instruction' });
+  const Instruction = renderSlotWith(instruction, {
+    variant: 'subheadline',
+    className: 'layout-instruction',
+  });
 
-  const Action =
-    isDefined(action) &&
-    action({
-      className: 'layout-action layout-action--flex-auto',
-    });
+  const Action = renderSlotWith(action, {
+    className: 'layout-action layout-action--flex-auto',
+  });
 
-  const ActionSlot =
-    isDefined(actionSlot) &&
-    actionSlot({
-      className: 'layout-action-slot',
-    });
+  const ActionSlot = renderSlotWith(actionSlot, {
+    className: 'layout-action-slot',
+  });
 
   return (
     <LayoutWrapper direction='column' {...wrapperProps}>

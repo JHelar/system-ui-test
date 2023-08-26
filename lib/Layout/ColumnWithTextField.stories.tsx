@@ -7,11 +7,9 @@ export default {
   title: 'Components / Layout / ColumnWithTextField',
   component: ColumnWithTextField,
   args: {
-    label: (props) => <Label {...props}>Label</Label>,
-    action: (props) => (
-      <TextField {...props} variant='simple' placeholder='Placeholder' />
-    ),
-    description: (props) => <Label {...props}>Description</Label>,
+    label: () => <Label>Label</Label>,
+    action: () => <TextField variant='simple' placeholder='Placeholder' />,
+    description: () => <Label>Description</Label>,
   },
 } satisfies Meta<typeof ColumnWithTextField>;
 
@@ -19,13 +17,13 @@ export const Default: StoryObj<typeof ColumnWithTextField> = {};
 
 export const WithInstruction: StoryObj<typeof ColumnWithTextField> = {
   args: {
-    instruction: (props) => <Label {...props}>Instruction</Label>,
+    instruction: () => <Label>Instruction</Label>,
   },
 };
 
 export const WithSuffix: StoryObj<typeof ColumnWithTextField> = {
   args: {
-    instruction: (props) => <Label {...props}>Instruction</Label>,
-    suffix: (props) => <Label {...props}>Suffix</Label>,
+    instruction: () => <Label>Instruction</Label>,
+    suffix: () => <Label>Suffix</Label>,
   },
 };

@@ -7,9 +7,9 @@ export default {
   title: 'Components / Layout / RowWithCheckbox',
   component: RowWithCheckbox,
   args: {
-    label: (props) => <Label {...props}>Label</Label>,
-    action: (props) => <Checkbox {...props} />,
-    description: (props) => <Label {...props}>Description</Label>,
+    label: () => <Label>Label</Label>,
+    action: () => <Checkbox />,
+    description: () => <Label>Description</Label>,
   },
 } satisfies Meta<typeof RowWithCheckbox>;
 

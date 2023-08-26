@@ -12,9 +12,10 @@ import {
 import { isDefined } from '../utils/isDefined';
 import { LabelProps } from '../Label';
 import { Separator } from '../Separator';
+import { renderSlotWith } from '../utils/renderSlot';
 
 type TableProps = PropsWithChildren<{
-  title?: RenderSlot<LabelProps>;
+  title?: RenderSlot;
   toolbar?: {
     left?: RenderSlot;
     right?: RenderSlot;
@@ -27,7 +28,7 @@ export function Table({ title, toolbar, header, children }: TableProps) {
 
   const Title = isDefined(title) && (
     <>
-      {title({ variant: 'headline' })}
+      {renderSlotWith(title, { variant: 'headline' })}
       <Separator height='thin' variant='empty' />
     </>
   );

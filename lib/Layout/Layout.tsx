@@ -56,6 +56,16 @@ export function RowWithSelect({ ...baseRowProps }: RowWithSelectProps) {
   return <BaseLayoutRow {...baseRowProps} actionPosition='right' actionFlex />;
 }
 
+type RowWithToggleGroupProps = Pick<
+  BaseLayoutProps,
+  'label' | 'action' | 'className'
+>;
+export function RowWithToggleGroup({
+  ...baseRowProps
+}: RowWithToggleGroupProps) {
+  return <BaseLayoutRow {...baseRowProps} actionPosition='right' actionFlex />;
+}
+
 type LayoutProps = PropsWithChildren<{
   sidebar?: RenderSlot;
   alignItems: ContentWrapperProps['$alignItems'];

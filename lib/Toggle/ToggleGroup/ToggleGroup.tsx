@@ -5,7 +5,7 @@ import { BaseToggleGroupRoot } from './ToggleGroup.styles';
 type ToggleGroupProps = PropsWithChildren<{
   className?: string;
 }> &
-  RadixToggleGroup.ToggleGroupSingleProps;
+  Omit<RadixToggleGroup.ToggleGroupSingleProps, 'type'>;
 
 /**
  * Toggle group component

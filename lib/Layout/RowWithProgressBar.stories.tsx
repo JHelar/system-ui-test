@@ -9,9 +9,9 @@ export default {
   title: 'Components / Layout / RowWithProgressBar',
   component: RowWithProgressBar,
   args: {
-    label: (props) => <Label {...props}>Label</Label>,
-    action: (props) => <ProgressBar progress={50} {...props} />,
-    description: (props) => <Label {...props}>Description</Label>,
+    label: () => <Label>Label</Label>,
+    action: () => <ProgressBar progress={50} />,
+    description: () => <Label>Description</Label>,
   },
 } satisfies Meta<typeof RowWithProgressBar>;
 
@@ -20,8 +20,8 @@ export const Default: Story = {};
 
 export const WithSlot: Story = {
   args: {
-    actionSlot: (props) => (
-      <Button {...props} variant='normalBorderless'>
+    actionSlot: () => (
+      <Button variant='normalBorderless'>
         <Icon name='cancel' />
       </Button>
     ),

@@ -17,7 +17,7 @@ export default {
   render: (props) => (
     <Table
       {...props}
-      title={(props) => <Label {...props}>Table title</Label>}
+      title={() => <Label>Table title</Label>}
       toolbar={{
         left: () => (
           <>

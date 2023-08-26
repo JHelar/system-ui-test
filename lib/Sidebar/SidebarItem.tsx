@@ -2,13 +2,14 @@ import { PropsWithChildren } from 'react';
 import { PolymorphicComponentProps, RenderSlot } from '../types';
 import { isDefined } from '../utils/isDefined';
 import { BaseItem, StyledLabel, StyledSuffix } from './SidebarItem.styles';
+import { renderSlotWith } from '../utils/renderSlot';
 
 type SidebarItemProps = PropsWithChildren<{
   selected?: boolean;
   disabled?: boolean;
-  leadingIcon?: RenderSlot<{ className: string }>;
+  leadingIcon?: RenderSlot;
   suffix?: string;
-  trailingIcon?: RenderSlot<{ className: string }>;
+  trailingIcon?: RenderSlot;
 }>;
 
 export function SidebarItem<AsTarget extends React.ElementType>({
@@ -20,13 +21,13 @@ export function SidebarItem<AsTarget extends React.ElementType>({
   disabled,
   ...baseItemProps
 }: PolymorphicComponentProps<AsTarget, SidebarItemProps>) {
-  const LeadingIcon =
-    isDefined(leadingIcon) &&
-    leadingIcon({ className: 'sidebar-item-icon--leading' });
+  const LeadingIcon = renderSlotWith(leadingIcon, {
+    className: 'sidebar-item-icon--leading',
+  });
 
-  const TrailingIcon =
-    isDefined(trailingIcon) &&
-    trailingIcon({ className: 'sidebar-item-icon--trailing' });
+  const TrailingIcon = renderSlotWith(trailingIcon, {
+    className: 'sidebar-item-icon--trailing',
+  });
 
   const Suffix = isDefined(suffix) && (
     <StyledSuffix variant='body'>{suffix}</StyledSuffix>

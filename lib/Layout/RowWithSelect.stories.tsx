@@ -8,14 +8,13 @@ export default {
   title: 'Components / Layout / RowWithSelect',
   component: RowWithSelect,
   args: {
-    label: (props) => (
-      <Label {...props} as='label' htmlFor='storybook-select'>
+    label: () => (
+      <Label as='label' htmlFor='storybook-select'>
         Label
       </Label>
     ),
-    action: (props) => (
+    action: () => (
       <Select
-        {...props}
         placeholder='Select'
         name='storybook-select'
         id='storybook-select'
@@ -27,7 +26,7 @@ export default {
         <SelectItem value='pineapple'>Pineapple</SelectItem>
       </Select>
     ),
-    description: (props) => <Label {...props}>Description</Label>,
+    description: () => <Label>Description</Label>,
   },
 } satisfies Meta<typeof RowWithSelect>;
 
