@@ -21,6 +21,9 @@ export default {
     data: chartData,
     index: 'name',
     categories: categories,
+    showGridLines: false,
+    showLegend: false,
+    showYAxis: false,
     top: () => (
       <RowWithToggleGroup
         label={() => <Label>Sync history</Label>}

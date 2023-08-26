@@ -5,10 +5,12 @@ import {
   StyledFlexColumn,
   StyledFlexRow,
 } from './BaseLayout.styles';
+import cn from 'classnames';
 
 type BaseLayoutRowProps = BaseLayoutProps & {
   actionPosition: 'left' | 'right';
   actionFlex?: boolean;
+  actionFlexEnd?: boolean;
 };
 
 export function BaseLayoutRow({
@@ -18,6 +20,7 @@ export function BaseLayoutRow({
   instruction,
   actionPosition,
   actionFlex = false,
+  actionFlexEnd = false,
   ...wrapperProps
 }: BaseLayoutRowProps) {
   const Label = renderSlotWith(label, {
@@ -36,7 +39,10 @@ export function BaseLayoutRow({
   });
 
   const Action = renderSlotWith(action, {
-    className: `layout-action${actionFlex ? ' layout-action--flex' : ''}`,
+    className: cn('layout-action', {
+      'layout-action--flex': actionFlex,
+      'justify-end': actionFlexEnd,
+    }),
   });
 
   if (actionPosition === 'left') {

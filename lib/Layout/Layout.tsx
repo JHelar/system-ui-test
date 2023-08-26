@@ -63,7 +63,14 @@ type RowWithToggleGroupProps = Pick<
 export function RowWithToggleGroup({
   ...baseRowProps
 }: RowWithToggleGroupProps) {
-  return <BaseLayoutRow {...baseRowProps} actionPosition='right' actionFlex />;
+  return (
+    <BaseLayoutRow
+      {...baseRowProps}
+      actionPosition='right'
+      actionFlex
+      actionFlexEnd
+    />
+  );
 }
 
 type LayoutProps = PropsWithChildren<{

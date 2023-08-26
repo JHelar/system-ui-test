@@ -10,12 +10,17 @@ type BarChartProps = {
   top?: RenderSlot;
 } & TremorBarChartProps;
 
+/**
+ * Bar chart component
+ *
+ * Thin wrapper around the [Tremor BarChart component](https://www.tremor.so/docs/components/bar-chart)
+ */
 export function BarChart({ top, ...barChartProps }: BarChartProps) {
   const TopWrapper = renderSlotWith(top);
   return (
     <StyledWrapper>
       {TopWrapper}
-      <TremorBarChart {...barChartProps} />
+      <TremorBarChart {...barChartProps} className='' />
     </StyledWrapper>
   );
 }

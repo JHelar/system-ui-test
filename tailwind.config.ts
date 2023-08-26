@@ -1,4 +1,8 @@
-/** @type {import('tailwindcss').Config} */
+import type { Config } from 'tailwindcss';
+import { appThemeColors } from './lib/AppTheme/appThemeColors';
+import { appThemeRadius } from './lib/AppTheme/appThemeRadius';
+import { appThemeDropShadow } from './lib/AppTheme/appThemeDropShadow';
+
 module.exports = {
   darkMode: 'class',
   content: [
@@ -12,31 +16,34 @@ module.exports = {
     current: 'currentColor',
     extend: {
       colors: {
+        blue: {
+          500: appThemeColors.accent.fill.normal,
+        },
         tremor: {
           brand: {
             faint: '#eff6ff', // blue-50
             muted: '#bfdbfe', // blue-200
             subtle: '#60a5fa', // blue-400
-            DEFAULT: '#3b82f6', // blue-500
+            DEFAULT: appThemeColors.accent.fill.normal, // blue-500
             emphasis: '#1d4ed8', // blue-700
             inverted: '#ffffff', // white
           },
           background: {
             muted: '#f9fafb', // gray-50
             subtle: '#f3f4f6', // gray-100
-            DEFAULT: '#ffffff', // white
+            DEFAULT: appThemeColors.base.background.normal, // white
             emphasis: '#374151', // gray-700
           },
           border: {
-            DEFAULT: '#e5e7eb', // gray-200
+            DEFAULT: appThemeColors.base.border.normal, // gray-200
           },
           ring: {
             DEFAULT: '#e5e7eb', // gray-200
           },
           content: {
             subtle: '#9ca3af', // gray-400
-            DEFAULT: '#6b7280', // gray-500
-            emphasis: '#374151', // gray-700
+            DEFAULT: appThemeColors.base.text.lowContrast, // gray-500
+            emphasis: appThemeColors.base.text.highContrast, // gray-700
             strong: '#111827', // gray-900
             inverted: '#ffffff', // white
           },
@@ -47,17 +54,16 @@ module.exports = {
         'tremor-input': '0 1px 2px 0 rgb(0 0 0 / 0.05)',
         'tremor-card':
           '0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)',
-        'tremor-dropdown':
-          '0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)',
+        'tremor-dropdown': appThemeDropShadow.large.boxShadow,
       },
       borderRadius: {
         'tremor-small': '0.375rem',
-        'tremor-default': '0.5rem',
+        'tremor-default': appThemeRadius.medium,
         'tremor-full': '9999px',
       },
       fontSize: {
-        'tremor-label': ['0.75rem'],
-        'tremor-default': ['0.875rem', { lineHeight: '1.25rem' }],
+        'tremor-label': ['12px', { lineHeight: '16px', fontWeight: 500 }],
+        'tremor-default': ['16px', { lineHeight: '24px' }],
         'tremor-title': ['1.125rem', { lineHeight: '1.75rem' }],
         'tremor-metric': ['1.875rem', { lineHeight: '2.25rem' }],
       },
@@ -93,4 +99,4 @@ module.exports = {
     },
   ],
   plugins: [require('@headlessui/tailwindcss')],
-};
+} satisfies Config;
