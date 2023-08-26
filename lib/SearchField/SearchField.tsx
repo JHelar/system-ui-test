@@ -6,7 +6,10 @@ type SearchFieldProps = {} & ComponentProps<typeof BaseInput>;
 
 export function SearchField({ className, ...inputProps }: SearchFieldProps) {
   return (
-    <StyledWrapper data-disabled={inputProps.disabled} className={className}>
+    <StyledWrapper
+      data-disabled={inputProps.disabled || undefined}
+      className={className}
+    >
       <Icon name='search' />
       <BaseInput {...inputProps} />
     </StyledWrapper>
