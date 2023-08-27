@@ -15,12 +15,7 @@ export default function RootLayout({
     <html lang='en'>
       <body>
         <StyledComponentsRegistry>
-          <AppThemeProvider>
-            <header>
-              <Menu />
-            </header>
-            {children}
-          </AppThemeProvider>
+          <AppThemeProvider>{children}</AppThemeProvider>
         </StyledComponentsRegistry>
       </body>
     </html>

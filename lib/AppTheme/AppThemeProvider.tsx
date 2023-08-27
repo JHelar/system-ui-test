@@ -10,6 +10,8 @@ const GlobalStyle = createGlobalStyle`
   html {
     font-family: ${primitives.typography.textFont};
     font-size: 100%;
+    -webkit-font-smoothing: antialiased;
+    font-smooth: always;
   }
   html,
   body {

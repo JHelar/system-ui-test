@@ -1,11 +1,20 @@
 import { PolymorphicComponentProps } from '../types';
-import { BaseLabel, LabelVariant } from './Label.styles';
+import {
+  BaseLabel,
+  LabelColorName,
+  LabelColorSet,
+  LabelVariant,
+} from './Label.styles';
 
 export type LabelProps = {
   /** The variant to render */
   variant?: LabelVariant;
 
   className?: string;
+
+  colorSet?: LabelColorSet;
+
+  colorName?: LabelColorName;
 };
 /**
  * Label text component
@@ -16,7 +25,16 @@ export type LabelProps = {
  */
 export function Label<AsTarget extends React.ElementType>({
   variant = 'body',
+  colorSet = 'base',
+  colorName = 'highContrast',
   ...labelProps
 }: PolymorphicComponentProps<AsTarget, LabelProps>) {
-  return <BaseLabel $variant={variant} {...labelProps} />;
+  return (
+    <BaseLabel
+      $colorSet={colorSet}
+      $colorName={colorName}
+      $variant={variant}
+      {...labelProps}
+    />
+  );
 }

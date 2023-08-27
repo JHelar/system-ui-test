@@ -5,8 +5,6 @@ type BaseStyleProps = {
 };
 
 export const baseStyle = css<BaseStyleProps>`
-  all: unset;
-
   display: flex;
   column-gap: ${({ theme }) => theme.spacing.xSmall};
   padding: ${({ theme }) => `${theme.spacing.xxSmall} ${theme.spacing.medium}`};

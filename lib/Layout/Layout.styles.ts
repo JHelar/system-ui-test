@@ -17,10 +17,15 @@ export const ContentWrapper = styled.div<ContentWrapperProps>`
   grid-column: ${({ $fullWidth = false }) =>
     $fullWidth ? '1 / -1' : '2 / -1'};
   background-color: ${({ theme }) => theme.colors.base.background.normal};
-  padding: ${({ theme }) => `${theme.spacing.xxSmall} ${theme.spacing.medium}`};
+  padding: ${({ theme, $fullWidth }) =>
+    `${$fullWidth ? theme.spacing.xxSmall : theme.spacing['6xLarge']} ${
+      theme.spacing.medium
+    }`};
   overflow-y: auto;
 
   display: flex;
   align-items: ${({ $alignItems }) => $alignItems};
   justify-content: ${({ $justifyContent }) => $justifyContent};
+  height: 100vh;
+  overflow-y: auto;
 `;

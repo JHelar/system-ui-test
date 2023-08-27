@@ -19,6 +19,9 @@ module.exports = {
         blue: {
           500: appThemeColors.accent.fill.normal,
         },
+        gray: {
+          500: appThemeColors.base.border.subtle,
+        },
         tremor: {
           brand: {
             faint: '#eff6ff', // blue-50

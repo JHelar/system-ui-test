@@ -8,7 +8,7 @@ export const StyledWrapper = styled.aside`
   align-items: flex-start;
   background-color: ${({ theme }) => theme.colors.base.background.subtle};
   border-right: 1px solid ${({ theme }) => theme.colors.base.border.subtle};
-  height: 100%;
+  height: 100vh;
 `;
 
 export const StyledItemWrapper = styled.div`

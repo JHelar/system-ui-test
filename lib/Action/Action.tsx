@@ -4,7 +4,7 @@ import { BaseAction } from './Action.styles';
 import { renderSlotWith } from '../utils/renderSlotWith';
 
 type ActionProps = ComponentProps<'a'> & {
-  icon: RenderSlot;
+  icon?: RenderSlot;
   disabled?: boolean;
 };
 

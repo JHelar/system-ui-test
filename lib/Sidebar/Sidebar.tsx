@@ -11,6 +11,7 @@ import { Separator } from '../Separator';
 type SidebarProps = PropsWithChildren<{
   topTitle?: RenderSlot;
   avatar?: RenderSlot;
+  selectButton?: RenderSlot;
   bottomRow?: RenderSlot;
   bottomLabel?: RenderSlot;
   className?: string;
@@ -20,6 +21,7 @@ export function Sidebar({
   avatar,
   bottomRow,
   bottomLabel,
+  selectButton,
   children,
   topTitle,
   ...wrapperProps
@@ -27,16 +29,11 @@ export function Sidebar({
   const TopTitle = isDefined(topTitle) && (
     <>
       {topTitle()}
-      <Separator variant='empty' height='thin' />
+      <Separator variant='empty' height='tall' />
     </>
   );
 
-  const Avatar = isDefined(avatar) && (
-    <>
-      {avatar()}
-      <Separator variant='empty' height='thin' />
-    </>
-  );
+  const Avatar = isDefined(avatar) && avatar();
 
   const BottomRow = isDefined(bottomRow) && (
     <>
@@ -47,10 +44,18 @@ export function Sidebar({
 
   const BottomLabel = isDefined(bottomLabel) && bottomLabel();
 
+  const SelectButton = isDefined(selectButton) && (
+    <>
+      {selectButton()}
+      <Separator variant='empty' height='tall' />
+    </>
+  );
+
   return (
     <StyledWrapper {...wrapperProps}>
       {TopTitle}
       {Avatar}
+      {SelectButton}
       <StyledItemWrapper>{children}</StyledItemWrapper>
       {BottomRow}
       {BottomLabel}

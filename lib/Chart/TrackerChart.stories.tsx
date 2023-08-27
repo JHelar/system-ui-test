@@ -1,29 +1,28 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { BarChart } from './BarChart';
 import { RowWithToggleGroup } from '../Layout';
 import { Label } from '../Label';
 import { ToggleGroup, ToggleGroupItem } from '../Toggle';
+import { TrackerChart } from './TrackerChart';
+import { Color } from '@tremor/react';
 
-const chartData = Array(31)
-  .fill(null)
-  .map((_, index) => ({
-    name: index,
-    month: 50 * (index < 25 ? 0 : 1),
-  }));
+const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
 
-const categories = ['month'];
+interface Tracker {
+  color: Color;
+  tooltip: string;
+}
+
+const weekData = weekdays.map<Tracker>((weekDay) => ({
+  tooltip: weekDay,
+  color: Math.random() > 0.5 ? 'blue' : 'gray',
+}));
 
 export default {
-  title: 'Components / BarChart',
-  component: BarChart,
+  title: 'Components / Tracker',
+  component: TrackerChart,
   tags: ['autodocs'],
   args: {
-    data: chartData,
-    index: 'name',
-    categories: categories,
-    showGridLines: false,
-    showLegend: false,
-    showYAxis: false,
+    data: weekData,
     top: () => (
       <RowWithToggleGroup
         label={() => <Label>Sync history</Label>}
@@ -37,8 +36,8 @@ export default {
       />
     ),
   },
-} as Meta<typeof BarChart>;
+} as Meta<typeof TrackerChart>;
 
-type Story = StoryObj<typeof BarChart>;
+type Story = StoryObj<typeof TrackerChart>;
 
 export const Default: Story = {};
