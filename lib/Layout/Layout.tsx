@@ -6,6 +6,8 @@ import {
   ContentWrapper,
   ContentWrapperProps,
   LayoutWrapper,
+  StyledMain,
+  StyledMainProps,
 } from './Layout.styles';
 import { PropsWithChildren } from 'react';
 import { isDefined } from '../utils/isDefined';
@@ -75,28 +77,41 @@ export function RowWithToggleGroup({
 
 type LayoutProps = PropsWithChildren<{
   sidebar?: RenderSlot;
-  alignItems: ContentWrapperProps['$alignItems'];
-  justifyContent: ContentWrapperProps['$justifyContent'];
 }>;
-export function Layout({
-  sidebar,
-  alignItems,
-  justifyContent,
-  children,
-}: LayoutProps) {
+export function Layout({ sidebar, children }: LayoutProps) {
   const Sidebar = isDefined(sidebar) && sidebar();
   const fullWidth = !isDefined(sidebar);
 
   return (
     <LayoutWrapper>
       {Sidebar}
-      <ContentWrapper
-        $alignItems={alignItems}
-        $justifyContent={justifyContent}
-        $fullWidth={fullWidth}
-      >
-        {children}
-      </ContentWrapper>
+      <ContentWrapper $fullWidth={fullWidth}>{children}</ContentWrapper>
     </LayoutWrapper>
   );
 }
+
+type LayoutMainProps = PropsWithChildren<{
+  alignSelf: StyledMainProps['$alignSelf'];
+  justifySelf: StyledMainProps['$justifySelf'];
+  width?: StyledMainProps['$width'];
+  topPadding?: StyledMainProps['$topPadding'];
+}>;
+export function LayoutMain({
+  children,
+  alignSelf,
+  justifySelf,
+  width = 'full',
+  topPadding = false,
+}: LayoutMainProps) {
+  return (
+    <StyledMain
+      $alignSelf={alignSelf}
+      $justifySelf={justifySelf}
+      $width={width}
+      $topPadding={topPadding}
+    >
+      {children}
+    </StyledMain>
+  );
+}
+LayoutMain.displayName = 'LayoutMain';

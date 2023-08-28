@@ -1,13 +1,13 @@
 'use client';
 
 import { PropsWithChildren } from 'react';
-import { Layout, LayoutMain, Row } from '@/lib/Layout';
+import { Layout, Row } from '@/lib/Layout';
+import { Avatar } from '@/lib/Avatar';
 import { Sidebar, SidebarItem } from '@/lib/Sidebar';
 import { Label } from '@/lib/Label';
-import { Avatar } from '@/lib/Avatar';
 import { Select } from '@/lib/Select';
-import { Icon } from '@/lib/Icon';
 import { Button } from '@/lib/Button';
+import { Icon } from '@/lib/Icon';
 
 export default function PageLayout({ children }: PropsWithChildren) {
   return (
@@ -30,16 +30,16 @@ export default function PageLayout({ children }: PropsWithChildren) {
           )}
           bottomLabel={() => <Label variant='footnote'>App. v0.7.0</Label>}
         >
-          <SidebarItem
-            selected
-            leadingIcon={() => <Icon name='widgets' fill />}
-          >
+          <SidebarItem leadingIcon={() => <Icon name='widgets' />}>
             Dashboard
           </SidebarItem>
           <SidebarItem leadingIcon={() => <Icon name='cable' />}>
             Connectors
           </SidebarItem>
-          <SidebarItem leadingIcon={() => <Icon name='compare_arrows' />}>
+          <SidebarItem
+            selected
+            leadingIcon={() => <Icon name='compare_arrows' fill />}
+          >
             Mirrors
           </SidebarItem>
           <SidebarItem leadingIcon={() => <Icon name='cloud' />}>
@@ -51,9 +51,7 @@ export default function PageLayout({ children }: PropsWithChildren) {
         </Sidebar>
       )}
     >
-      <LayoutMain alignSelf='flex-start' justifySelf='center' width='xxLarge'>
-        {children}
-      </LayoutMain>
+      {children}
     </Layout>
   );
 }
