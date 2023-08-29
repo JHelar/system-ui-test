@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import { Menu } from '../components/Menu';
 import { AppThemeProvider, StyledComponentsRegistry } from '../lib/AppTheme';
 
 export const metadata: Metadata = {

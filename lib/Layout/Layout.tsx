@@ -5,6 +5,7 @@ import { BaseLayoutColumn, BaseLayoutColumnProps } from './BaseLayoutColumn';
 import {
   ContentWrapper,
   ContentWrapperProps,
+  LayoutRightSidebarWrapper,
   LayoutWrapper,
   StyledMain,
   StyledMainProps,
@@ -115,3 +116,20 @@ export function LayoutMain({
   );
 }
 LayoutMain.displayName = 'LayoutMain';
+
+type LayoutRightSidebarProps = PropsWithChildren<{
+  open?: boolean;
+  className?: string;
+}>;
+
+export function LayoutRightSidebar({
+  open = false,
+  children,
+  ...divProps
+}: LayoutRightSidebarProps) {
+  return (
+    <LayoutRightSidebarWrapper data-open={open} {...divProps}>
+      {children}
+    </LayoutRightSidebarWrapper>
+  );
+}

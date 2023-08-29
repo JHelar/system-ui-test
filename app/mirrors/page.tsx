@@ -4,7 +4,6 @@ import { Panel } from '@/lib/Panel';
 import { Label } from '@/lib/Label';
 import { LayoutMain } from '@/lib/Layout';
 import { Select } from '@/lib/Select';
-import { ButtonGroup } from '@/lib/ButtonGroup';
 import { Button } from '@/lib/Button';
 import { Header } from '@/lib/Header';
 import { Table, TableCell, TableRow } from '@/lib/Table';
@@ -110,9 +109,7 @@ const ExampleTable = ({ title }: { title: string }) => (
           <TableCell>
             <Label>Label</Label>
           </TableCell>
-          <TableCell>
-            {Badges[Math.round(Math.random() * (Badges.length - 1))]}
-          </TableCell>
+          <TableCell>{Badges[index % Badges.length]}</TableCell>
           <TableCell variant='button'>
             <Button>
               <Icon name='more_horiz' />

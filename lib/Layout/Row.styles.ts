@@ -34,6 +34,7 @@ export const RowWrapper = styled.div`
 
 export const TextContent = styled.div`
   display: flex;
+  flex-grow: 1;
   flex-flow: column;
   row-gap: ${({ theme }) => theme.spacing.xxSmall};
 `;

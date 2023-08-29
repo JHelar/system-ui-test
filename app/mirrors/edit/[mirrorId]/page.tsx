@@ -125,9 +125,7 @@ const ExampleTable = ({ title }: { title: string }) => (
           <TableCell>
             <Label>Label</Label>
           </TableCell>
-          <TableCell>
-            {Badges[Math.round(Math.random() * (Badges.length - 1))]}
-          </TableCell>
+          <TableCell>{Badges[index % Badges.length]}</TableCell>
           <TableCell variant='button'>
             <Button>
               <Icon name='more_horiz' />

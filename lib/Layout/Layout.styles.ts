@@ -39,3 +39,20 @@ export const StyledMain = styled.main<StyledMainProps>`
   align-self: ${({ $alignSelf }) => $alignSelf};
   justify-self: ${({ $justifySelf }) => $justifySelf};
 `;
+
+export const LayoutRightSidebarWrapper = styled.div`
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: ${({ theme }) => theme.size.xLarge};
+  overflow-y: auto;
+
+  translate: 100%;
+  transition: translate 0.25s linear;
+  background-color: ${({ theme }) => theme.colors.base.background.normal};
+
+  &[data-open='true'] {
+    translate: 0%;
+  }
+`;

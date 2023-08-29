@@ -13,7 +13,7 @@ type ButtonProps = {
   className?: string;
 };
 
-export function Button<AsTarget extends React.ElementType>({
+export function Button<AsTarget extends React.ElementType = 'button'>({
   variant = 'normal',
   children,
   loading = false,

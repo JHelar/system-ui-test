@@ -34,10 +34,10 @@ export function Table({ title, toolbar, header, children }: TableProps) {
   );
 
   const ToolbarLeft = isDefined(toolbar?.left) && (
-    <ToolbarSlot>{toolbar?.left()}</ToolbarSlot>
+    <ToolbarSlot>{renderSlotWith(toolbar?.left)}</ToolbarSlot>
   );
   const ToolbarRight = isDefined(toolbar?.right) && (
-    <ToolbarSlot>{toolbar?.right()}</ToolbarSlot>
+    <ToolbarSlot>{renderSlotWith(toolbar?.right)}</ToolbarSlot>
   );
 
   const Toolbar = isDefined(toolbar) && (
@@ -51,10 +51,7 @@ export function Table({ title, toolbar, header, children }: TableProps) {
   );
 
   const Header = isDefined(header) && (
-    <>
-      <StyledTableHeader>{header()}</StyledTableHeader>
-      <Separator height='thin' variant='indent' as='tr' />
-    </>
+    <StyledTableHeader>{renderSlotWith(header)}</StyledTableHeader>
   );
 
   return (
@@ -65,6 +62,9 @@ export function Table({ title, toolbar, header, children }: TableProps) {
         <StyledTable>
           {Header}
           <StyledTableBody>
+            {isDefined(header) && (
+              <Separator height='thin' variant='indent' as='tr' />
+            )}
             {Children.map(arrayChildren, (child, index) => {
               const isLast = index === arrayChildren.length - 1;
 
