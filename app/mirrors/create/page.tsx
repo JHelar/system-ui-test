@@ -2,7 +2,7 @@
 
 import { Panel } from '@/lib/Panel';
 import { Label } from '@/lib/Label';
-import { RowWithSelect, RowWithTextField } from '@/lib/Layout';
+import { LayoutMain, RowWithSelect, RowWithTextField } from '@/lib/Layout';
 import { Select } from '@/lib/Select';
 import { TextField } from '@/lib/TextField';
 import { ButtonGroup } from '@/lib/ButtonGroup';
@@ -10,7 +10,7 @@ import { Button } from '@/lib/Button';
 
 export default function CreateMirrors() {
   return (
-    <>
+    <LayoutMain width='xxLarge' alignSelf='center' justifySelf='center'>
       <Panel>
         <Label variant='title3' as={'h2'}>
           Create a new mirror
@@ -116,6 +116,6 @@ export default function CreateMirrors() {
           <Button variant='normalSolid'>Continue</Button>
         </ButtonGroup>
       </Panel>
-    </>
+    </LayoutMain>
   );
 }

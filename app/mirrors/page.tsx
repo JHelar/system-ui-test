@@ -11,6 +11,7 @@ import { Checkbox } from '@/lib/Checkbox';
 import { Icon } from '@/lib/Icon';
 import { SearchField } from '@/lib/SearchField';
 import { Badge } from '@/lib/Badge';
+import Link from 'next/link';
 
 const Badges = [
   <Badge variant='positive' key={1}>
@@ -95,7 +96,9 @@ const ExampleTable = ({ title }: { title: string }) => (
             <Checkbox />
           </TableCell>
           <TableCell variant='extended'>
-            <Label>Lorem</Label>
+            <Label as={Link} href={'/mirrors/edit/TestMirror'}>
+              Test mirror
+            </Label>
           </TableCell>
           <TableCell>
             <Label>Label</Label>
@@ -126,7 +129,11 @@ export default function Mirrors() {
       <Panel>
         <Header
           variant='title2'
-          slot={() => <Button variant='normalSolid'>New mirror</Button>}
+          slot={() => (
+            <Button variant='normalSolid' as={Link} href={'/mirrors/create'}>
+              New mirror
+            </Button>
+          )}
         >
           Mirrors
         </Header>

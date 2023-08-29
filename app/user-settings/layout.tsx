@@ -8,6 +8,7 @@ import { Avatar } from '@/lib/Avatar';
 import { Select } from '@/lib/Select';
 import { Icon } from '@/lib/Icon';
 import { Button } from '@/lib/Button';
+import Link from 'next/link';
 
 export default function PageLayout({ children }: PropsWithChildren) {
   return (
@@ -31,21 +32,39 @@ export default function PageLayout({ children }: PropsWithChildren) {
           bottomLabel={() => <Label variant='footnote'>App. v0.7.0</Label>}
         >
           <SidebarItem
-            selected
-            leadingIcon={() => <Icon name='widgets' fill />}
+            leadingIcon={() => <Icon name='widgets' />}
+            as={Link}
+            href={'/dashboard'}
           >
             Dashboard
           </SidebarItem>
-          <SidebarItem leadingIcon={() => <Icon name='cable' />}>
+          <SidebarItem
+            as={Link}
+            href={'/connectors'}
+            leadingIcon={() => <Icon name='cable' />}
+          >
             Connectors
           </SidebarItem>
-          <SidebarItem leadingIcon={() => <Icon name='compare_arrows' />}>
+          <SidebarItem
+            as={Link}
+            href={'/mirrors'}
+            leadingIcon={() => <Icon name='compare_arrows' />}
+          >
             Mirrors
           </SidebarItem>
-          <SidebarItem leadingIcon={() => <Icon name='cloud' />}>
+          <SidebarItem
+            as={Link}
+            href={'/cloud'}
+            leadingIcon={() => <Icon name='cloud' />}
+          >
             Cloud
           </SidebarItem>
-          <SidebarItem leadingIcon={() => <Icon name='settings' />}>
+          <SidebarItem
+            as={Link}
+            href={'/user-settings'}
+            selected
+            leadingIcon={() => <Icon name='settings' fill />}
+          >
             Settings
           </SidebarItem>
         </Sidebar>

@@ -6,14 +6,14 @@ import { Button } from '@/lib/Button';
 import { Header } from '@/lib/Header';
 import { Icon } from '@/lib/Icon';
 import { Label } from '@/lib/Label';
-import { RowWithSelect, RowWithTextField } from '@/lib/Layout';
+import { LayoutMain, RowWithSelect, RowWithTextField } from '@/lib/Layout';
 import { Panel } from '@/lib/Panel';
 import { Select } from '@/lib/Select';
 import { TextField } from '@/lib/TextField';
 
 export default function UserSettings() {
   return (
-    <>
+    <LayoutMain alignSelf='flex-start' justifySelf='center' topPadding>
       <Panel>
         <Avatar size='xLarge' variant='text' text='NS' />
         <Label as='h1' variant='title3'>
@@ -261,6 +261,6 @@ export default function UserSettings() {
           Permanently delete the account and remove access from all workspaces.
         </Label>
       </Panel>
-    </>
+    </LayoutMain>
   );
 }

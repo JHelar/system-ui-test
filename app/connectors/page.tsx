@@ -11,6 +11,8 @@ import { Table, TableCell, TableRow } from '@/lib/Table';
 import { Checkbox } from '@/lib/Checkbox';
 import { Select } from '@/lib/Select';
 import { Badge } from '@/lib/Badge';
+import { Header } from '../../lib/Header';
+import Link from 'next/link';
 
 const Badges = [
   <Badge variant='positive' key={1}>
@@ -95,7 +97,9 @@ const ExampleTable = ({ title }: { title: string }) => (
             <Checkbox />
           </TableCell>
           <TableCell variant='extended'>
-            <Label>Lorem</Label>
+            <Label as={Link} href='/connectors/edit/TestConnector'>
+              Test connector
+            </Label>
           </TableCell>
           <TableCell>
             <Label>Label</Label>
@@ -124,9 +128,16 @@ export default function Connectors() {
   return (
     <LayoutMain alignSelf='flex-start' justifySelf='flex-start' width='full'>
       <Panel>
-        <Label variant='title2' as='h2'>
+        <Header
+          variant='title2'
+          slot={() => (
+            <Button as={Link} href={'/connectors/create'} variant='normalSolid'>
+              New connector
+            </Button>
+          )}
+        >
           Connectors
-        </Label>
+        </Header>
       </Panel>
       <Panel>
         <ExampleTable title='All connectors' />

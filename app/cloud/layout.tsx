@@ -2,10 +2,10 @@
 
 import { PropsWithChildren } from 'react';
 import { Layout, Row } from '@/lib/Layout';
-import { Avatar } from '@/lib/Avatar';
 import { Sidebar, SidebarItem } from '@/lib/Sidebar';
 import { Label } from '@/lib/Label';
 import { Select } from '@/lib/Select';
+import { Avatar } from '@/lib/Avatar';
 import { Button } from '@/lib/Button';
 import { Icon } from '@/lib/Icon';
 import Link from 'next/link';
@@ -48,15 +48,15 @@ export default function PageLayout({ children }: PropsWithChildren) {
           <SidebarItem
             as={Link}
             href={'/mirrors'}
-            selected
-            leadingIcon={() => <Icon name='compare_arrows' fill />}
+            leadingIcon={() => <Icon name='compare_arrows' />}
           >
             Mirrors
           </SidebarItem>
           <SidebarItem
             as={Link}
             href={'/cloud'}
-            leadingIcon={() => <Icon name='cloud' />}
+            selected
+            leadingIcon={() => <Icon name='cloud' fill />}
           >
             Cloud
           </SidebarItem>
