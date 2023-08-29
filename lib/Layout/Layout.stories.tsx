@@ -17,8 +17,6 @@ type Story = StoryObj<typeof Layout>;
 export const Overview: Story = {
   render: () => (
     <Layout
-      alignItems='flex-start'
-      justifyContent='flex-start'
       sidebar={() => (
         <Sidebar
           topTitle={() => <Label variant='headline'>PeerDB</Label>}
@@ -30,29 +28,19 @@ export const Overview: Story = {
           )}
           bottomLabel={() => <Label variant='footnote'>App. v0.7.0</Label>}
         >
-          <SidebarItem
-            leadingIcon={(props) => <Icon {...props} name='widgets' />}
-          >
+          <SidebarItem leadingIcon={() => <Icon name='widgets' />}>
             Dashboard
           </SidebarItem>
-          <SidebarItem
-            leadingIcon={(props) => <Icon {...props} name='cable' />}
-          >
+          <SidebarItem leadingIcon={() => <Icon name='cable' />}>
             Connectors
           </SidebarItem>
-          <SidebarItem
-            leadingIcon={(props) => <Icon {...props} name='compare_arrows' />}
-          >
+          <SidebarItem leadingIcon={() => <Icon name='compare_arrows' />}>
             Mirrors
           </SidebarItem>
-          <SidebarItem
-            leadingIcon={(props) => <Icon {...props} name='cloud' />}
-          >
+          <SidebarItem leadingIcon={() => <Icon name='cloud' />}>
             Cloud
           </SidebarItem>
-          <SidebarItem
-            leadingIcon={(props) => <Icon {...props} name='settings' />}
-          >
+          <SidebarItem leadingIcon={() => <Icon name='settings' />}>
             Settings
           </SidebarItem>
         </Sidebar>
