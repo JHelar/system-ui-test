@@ -10,13 +10,18 @@ import { Icon } from '@/lib/Icon';
 import { Button } from '@/lib/Button';
 import Link from 'next/link';
 import { Header } from '@/lib/Header';
+import { BrandLogo } from '@/lib/BrandLogo';
 
 export default function Home() {
   return (
     <Layout
       sidebar={() => (
         <Sidebar
-          topTitle={() => <Label variant='headline'>PeerDB</Label>}
+          topTitle={() => (
+            <Label as={Link} href='/'>
+              <BrandLogo />
+            </Label>
+          )}
           selectButton={() => <Select placeholder='Deployment name' />}
           avatar={() => (
             <Row

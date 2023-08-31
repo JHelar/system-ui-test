@@ -9,13 +9,18 @@ import { Select } from '@/lib/Select';
 import { Icon } from '@/lib/Icon';
 import { Button } from '@/lib/Button';
 import Link from 'next/link';
+import { BrandLogo } from '@/lib/BrandLogo';
 
 export default function PageLayout({ children }: PropsWithChildren) {
   return (
     <Layout
       sidebar={() => (
         <Sidebar
-          topTitle={() => <Label variant='headline'>PeerDB</Label>}
+          topTitle={() => (
+            <Label>
+              <BrandLogo />
+            </Label>
+          )}
           selectButton={() => <Select placeholder='Deployment name' />}
           avatar={() => (
             <Row

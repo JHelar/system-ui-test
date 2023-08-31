@@ -25,26 +25,26 @@ export const appThemeColors = {
   },
   accent: {
     background: {
-      normal: '#FBFDFF',
-      subtle: '#F5FAFF',
+      normal: '#FBFEFC',
+      subtle: '#F2FCF5',
     },
     surface: {
-      normal: '#EDF6FF',
-      hovered: '#E1F0FF',
-      selected: '#CEE7FE',
+      normal: '#E9F9EE',
+      hovered: '#DDF3E4',
+      selected: '#CCEBD7',
     },
     border: {
-      subtle: '#B7D9F8',
-      normal: '#96C7F2',
-      hovered: '#5EB0EF',
+      subtle: '#B4DFC4',
+      normal: '#92CEAC',
+      hovered: '#5BB98C',
     },
     fill: {
-      normal: '#0091FF',
-      hovered: '#0081F1',
+      normal: '#30A46C',
+      hovered: '#299764',
     },
     text: {
-      lowContrast: '#006ADC',
-      highContrast: '#00254D',
+      lowContrast: '#18794E',
+      highContrast: '#153226',
     },
   },
   destructive: {
