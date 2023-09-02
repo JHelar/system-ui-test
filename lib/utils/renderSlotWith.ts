@@ -1,8 +1,11 @@
 import { Attributes, cloneElement, isValidElement } from 'react';
 import { RenderSlot } from '../types';
 import { isDefined } from './isDefined';
+import cn from 'classnames';
 
-export const renderSlotWith = <TProps extends Partial<TProps> & Attributes>(
+export const renderSlotWith = <
+  TProps extends Partial<TProps> & Attributes & { className?: string },
+>(
   renderSlot?: RenderSlot,
   injectedProps?: TProps
 ) => {
@@ -11,5 +14,20 @@ export const renderSlotWith = <TProps extends Partial<TProps> & Attributes>(
   const element = renderSlot();
   if (!isValidElement<TProps>(element)) return null;
 
-  return cloneElement(element, injectedProps);
+  const elementClassName =
+    'className' in element.props
+      ? typeof element.props.className === 'string'
+        ? element.props.className
+        : undefined
+      : undefined;
+  const injectedClassName =
+    injectedProps && 'className' in injectedProps
+      ? typeof injectedProps.className === 'string'
+        ? injectedProps.className
+        : undefined
+      : undefined;
+
+  const className = cn(elementClassName, injectedClassName);
+
+  return cloneElement(element, { ...injectedProps, className } as TProps);
 };
