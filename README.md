@@ -39,7 +39,7 @@ The stories and their corresponding components resides inside the `lib` folder.
 
 ## Storybook Github pages
 
-The Storybook in this repositories Github pages at [Storybook](https://peerdb-io.github.io/peerdb-cloud-template).
+The Storybook in this repositories Github pages at [Storybook](https://jhelar.github.io/system-ui-test).
 
 To deploy a new version of Storybook to Github pages run the script
 

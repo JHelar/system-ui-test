@@ -14,7 +14,7 @@ export function Action({
   disabled,
   ...actionProps
 }: ActionProps) {
-  const Icon = renderSlotWith(icon);
+  const Icon = renderSlotWith(icon, { className: 'p-5' });
   return (
     <BaseAction {...actionProps} data-disabled={disabled || undefined}>
       {Icon}
